@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------------
 
 const parser = require.resolve('babel-eslint');
+const tsParser = require.resolve('@typescript-eslint/parser');
 
 const { stripIndent } = require('common-tags');
 const RuleTester = require('eslint').RuleTester;
@@ -15,8 +16,9 @@ const rule = require('../../../lib/rules/decorator-position');
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({ parser });
+const tsRuleTester = new RuleTester({ parser: tsParser });
 
-ruleTester.run('decorator-position', rule, {
+ruleTester.run('JS: decorator-position', rule, {
   valid: [
     {
       code: stripIndent`
@@ -60,11 +62,41 @@ ruleTester.run('decorator-position', rule, {
       `,
       options: [{ onSameLine: ['@tracked'] }],
       errors: [{ message: 'Expected @tracked to be inline' }],
-      // output: stripIndent`
-      //   class Foo {
-      //     @tracked foo;
-      //   }
-      // `,
+      output: stripIndent`
+        class Foo {
+          @tracked foo;
+        }
+      `,
     },
+  ],
+});
+
+tsRuleTester.run('TS: decorator-position', rule, {
+  valid: [
+    {
+      code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service locale!: LocaleService;
+        }
+      `,
+      options: [{ onSameLine: ['@service'] }],
+    },
+  ],
+  invalid: [
+    {
+      code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service
+          locale!: LocaleService;
+        }
+      `,
+      options: [{ onSameLine: ['@service'] }],
+      errors: [{ message: 'Expected @service to be inline' }],
+      output: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service locale!: LocaleService;
+        }
+      `,
+    }
   ],
 });
