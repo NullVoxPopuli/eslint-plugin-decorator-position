@@ -9,7 +9,7 @@ and different positions of the decorator may make more sense depending on contex
 
 ## Rule Details
 
-This rule will enforce one of two potential positions for each named decorator 
+This rule will enforce one of two potential positions for each named decorator
 present in the rule's config.
 
 ## Examples
@@ -38,15 +38,15 @@ store;
 ```
 
 ```js
-// { 
+// {
 //    onSameLine: [
-//      ['@service', { withArgs: false }]  
-//    ], 
+//      ['@service', { withArgs: false }]
+//    ],
 //    onDifferentLines: [
-//      ['@service', { withArgs: true }]  
-//    ] 
+//      ['@service', { withArgs: true }]
+//    ]
 // }
-@service 
+@service
 foo;
 
 @service('foo') bar;
@@ -63,12 +63,12 @@ Examples of **correct** code for this rule:
 
 ```js
 // { onDifferentLines: ['@action', '@dependentKeyCompat'] }
-@action 
+@action
 handleInput() {
 
 }
 
-@dependentKeyCompat 
+@dependentKeyCompat
 get myGetter() {
 
 }
@@ -76,13 +76,13 @@ get myGetter() {
 
 
 ```js
-// { 
+// {
 //    onSameLine: [
-//      ['@service', { withArgs: false }]  
-//    ], 
+//      ['@service', { withArgs: false }]
+//    ],
 //    onDifferentLines: [
-//      ['@service', { withArgs: true }]  
-//    ] 
+//      ['@service', { withArgs: true }]
+//    ]
 // }
 @service foo;
 
@@ -103,15 +103,15 @@ rules: {
     'error',
     {
       onSameLine: [
-        '@tracked', 
-        '@service', 
-        '@attr', 
+        '@tracked',
+        '@service',
+        '@attr',
         ['@hasMany', { withArgs: false }],
         ['@belongsTo', { withArgs: false }]
       ],
       onDifferentLines: [
-        '@dependentKeyCompat', 
-        '@computed', 
+        '@dependentKeyCompat',
+        '@computed',
         '@action',
         ['@hasMany', { withArgs: true }],
         ['@belongsTo', { withArgs: true }]
