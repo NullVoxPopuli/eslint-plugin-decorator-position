@@ -97,6 +97,6 @@ tsRuleTester.run('TS: decorator-position', rule, {
           @service locale!: LocaleService;
         }
       `,
-    }
+    },
   ],
 });
