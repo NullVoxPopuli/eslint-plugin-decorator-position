@@ -61,7 +61,7 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
       options: [{ onSameLine: ['@tracked'] }],
-      errors: [],
+      errors: [{ message: 'Expected @tracked to be inline' }],
       output: stripIndent`
         class Foo {
           @tracked foo;
