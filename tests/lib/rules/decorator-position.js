@@ -23,31 +23,59 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
-          @service a;
-          @service('b') b;
+          @foo foo;
 
-          @tracked foo;
+          @foo foo1 = 1;
 
-          @attr title;
+          @foo get foo2() {}
 
-          @belongsTo('user') author;
+          @foo foo3() {}
+        }
+      `,
+      options: [{ onSameLine: ['@foo'] }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo
+          foo;
 
-          @hasMany('comments') comments;
+          @foo
+          foo1 = 1;
 
-          @computed
-          get computedFoo() {}
+          @foo
+          get foo2() {}
 
-          @action
-          async updateSomething() {}
+          @foo
+          foo3() {}
+        }
+      `,
+      options: [{ onDifferentLines: ['@foo'] }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo
+          foo;
 
-          @dependentKeyCompat
-          get someDependentKey() {}
+          @bar bar;
+        }
+      `,
+      options: [{ onSameLine: ['@bar'], onDifferentLines: ['@foo'] }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo foo;
+
+          @foo(1)
+          foo1;
         }
       `,
       options: [
         {
-          onSameLine: ['@tracked', '@service', '@attr', '@hasMany', '@belongsTo'],
-          onDifferentLines: ['@dependentKeyCompat', '@computed', '@action'],
+          onSameLine: [['@foo', { withArgs: false }]],
+          onDifferentLines: [['@foo', { withArgs: true }]],
         },
       ],
     },
@@ -56,15 +84,15 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
-          @tracked
+          @foo
           foo;
         }
       `,
-      options: [{ onSameLine: ['@tracked'] }],
-      errors: [{ message: 'Expected @tracked to be inline' }],
+      options: [{ onSameLine: ['@foo'] }],
+      errors: [{ message: 'Expected @foo to be inline' }],
       output: stripIndent`
         class Foo {
-          @tracked foo;
+          @foo foo;
         }
       `,
     },
