@@ -96,6 +96,21 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
     },
+    // {
+    //   code: stripIndent`
+    //     class Foo {
+    //       @foo foo;
+    //     }
+    //   `,
+    //   options: [{ onDifferentLines: ['@foo'] }],
+    //   errors: [{ message: 'Expected @foo to be inline' }],
+    //   output: stripIndent`
+    //     class Foo {
+    //       @foo
+    //       foo;
+    //     }
+    //   `,
+    // },
   ],
 });
 
