@@ -36,8 +36,8 @@ module.exports = {
   ],
   rules: {
     // override rule settings here
-    'decorator-position': ['error', { 
-      onSameLine: ['@tracked'], 
+    'decorator-position': ['error', {
+      onSameLine: ['@tracked'],
       onDifferentLines: ['@computed'],
     }]
   }
