@@ -52,6 +52,6 @@ jobs:
 
     - run: yarn && volta install @commitlint/cli
     - run: |
-        git log --pretty=format:%B master...$GITHUB_SHA
+        git log --pretty=format:%B master...$GITHUB_REF
         echo "shoving the above into commitlint"
-        git log --pretty=format:%B master...$GITHUB_SHA | commitlint
+        git log --pretty=format:%B master...$GITHUB_REF | commitlint
