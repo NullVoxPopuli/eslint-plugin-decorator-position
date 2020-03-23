@@ -43,15 +43,15 @@ jobs:
     - run: yarn install
     - run: yarn lint:docs-js
 
-  commits:
-    name: Commit Messages
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: volta-cli/action@v1
+  # commits:
+  #   name: Commit Messages
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #   - uses: volta-cli/action@v1
 
-    - run: yarn && volta install @commitlint/cli
-    - run: |
-        git log --pretty=format:%B master...$GITHUB_REF
-        echo "shoving the above into commitlint"
-        git log --pretty=format:%B master...$GITHUB_REF | commitlint
+  #   - run: yarn && volta install @commitlint/cli
+  #   - run: |
+  #       git log --pretty=format:%B master...$GITHUB_REF
+  #       echo "shoving the above into commitlint"
+  #       git log --pretty=format:%B master...$GITHUB_REF | commitlint

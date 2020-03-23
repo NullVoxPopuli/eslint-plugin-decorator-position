@@ -34,8 +34,7 @@ jobs:
     - name: Test with ${{ matrix.node }}
       run: |
         yarn test:coverage --runInBand
-        yarn update && git diff --exit-code
-        yarn add --dev eslint@5 && yarn test --runInBand
+        yarn update && git diff --exit-code README.md docs/
 
   publish:
     name: Release
