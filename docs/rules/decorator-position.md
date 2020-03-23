@@ -6,7 +6,7 @@ Decorators always have two syntactically valid positions that they may be placed
 in relation to the thing they decorate. For many projects utilizing decorators,
 they are usually more than one type of decorator used -- which implies different semantics
 and different positions of the decorator may make more sense depending on context, and usage.
- 
+
 ## Rule Details
 
 This rule will enforce one of two potential positions for each named decorator
@@ -15,7 +15,6 @@ present in the rule's config.
 ## Examples
 
 Examples of **incorrect** code for this rule:
-
 
 ```js
 // { onSameLine: ['@tracked', `@service`] }
@@ -96,6 +95,7 @@ bar;
   * `onDifferentLines` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on a different line as the thing it decorates.
 
 Example:
+
 ```js
 rules: {
   'decorator-position': [
