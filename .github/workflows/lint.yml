@@ -23,21 +23,9 @@ jobs:
     - name: Install
       run: yarn install
 
-jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: volta-cli/action@v1
-
-    - name: Install
-      run: yarn install
-
     - name: ESLint
       run: yarn lint:js
 
-jobs:
   docs:
     name: Docs
     runs-on: ubuntu-latest
@@ -51,7 +39,6 @@ jobs:
     - name: Docs
       run: yarn lint:docs
 
-jobs:
   docs-js:
     name: Docs (JS)
     runs-on: ubuntu-latest
@@ -65,7 +52,6 @@ jobs:
     - name: Docs (JS)
       run: yarn lint:docs-js
 
-jobs:
   commits:
     name: Commit Messages
     runs-on: ubuntu-latest
