@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-decorator-position",
-  "version": "0.0.1-preview.5",
+  "version": "0.0.0-development",
   "description": "ESLint plugin for enforcing decorator position",
   "main": "lib/index.js",
   "files": [
@@ -20,11 +20,12 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
-    "update": "node ./scripts/update-rules.js"
+    "update": "node ./scripts/update-rules.js",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NullVoxPopuli/eslint-plugin-decorator-position.git"
+    "url": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position.git"
   },
   "keywords": [
     "eslint",
@@ -65,7 +66,8 @@
     "markdownlint-cli": "^0.21.0",
     "npm-run-all": "^4.1.5",
     "prettier": "1.19.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "semantic-release": "^17.0.4"
   },
   "dependencies": {
     "@ember-data/rfc395-data": "^0.0.4",
