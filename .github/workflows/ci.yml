@@ -55,5 +55,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: semantic-release-cli
+        run: |
+          semantic-release-cli \
+            --gh-token=$GITHUB_TOKEN \
+            --npm-token=$NPM_TOKEN \
+            --gh-username=nullvoxpopuli \
+            --npm-username=nullvoxpopuli
 
