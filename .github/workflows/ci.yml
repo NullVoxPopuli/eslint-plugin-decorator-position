@@ -1,0 +1,60 @@
+name: CI
+
+# Inspiration:
+# https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
+on:
+  pull_request:
+  push:
+    # filtering branches here prevents duplicate builds from pull_request and push
+    branches:
+      - master
+
+env:
+  CI: true
+
+jobs:
+  tests:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+        - "^8.3"
+        - "10"
+        - "12"
+    steps:
+    - uses: actions/checkout@v1
+    - uses: volta-cli/action@v1
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Install
+      run: yarn install
+
+    - name: Test with ${{ matrix.node }}
+      run: |
+        yarn test:coverage --runInBand
+        yarn update && git diff --exit-code
+        yarn add --dev eslint@5 && yarn test --runInBand
+
+  publish:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: [tests]
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: volta-cli/action@v1
+
+      - name: Install
+        run: |
+          yarn install
+          volta install semantic-release-cli
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: semantic-release
+
