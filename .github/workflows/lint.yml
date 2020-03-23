@@ -51,4 +51,4 @@ jobs:
     - uses: volta-cli/action@v1
 
     - run: volta install @commitlint/cli
-    - run: git log --pretty=format:%B master...HEAD | commitlint
+    - run: git log --pretty=format:%B master..HEAD | commitlint
