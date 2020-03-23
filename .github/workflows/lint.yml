@@ -20,11 +20,8 @@ jobs:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
 
-    - name: Install
-      run: yarn install
-
-    - name: ESLint
-      run: yarn lint:js
+    - run: yarn install
+    - run: yarn lint:js
 
   docs:
     name: Docs
@@ -33,11 +30,8 @@ jobs:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
 
-    - name: Install
-      run: yarn install
-
-    - name: Docs
-      run: yarn lint:docs
+    - run: yarn install
+    - run: yarn lint:docs
 
   docs-js:
     name: Docs (JS)
@@ -46,11 +40,8 @@ jobs:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
 
-    - name: Install
-      run: yarn install
-
-    - name: Docs (JS)
-      run: yarn lint:docs-js
+    - run: yarn install
+    - run: yarn lint:docs-js
 
   commits:
     name: Commit Messages
@@ -59,8 +50,5 @@ jobs:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
 
-    - name: Install
-      run: yarn install
-
-    - name: Commit Messages
-      run: yarn commitlint
+    - run: yarn install
+    - run: yarn commitlint
