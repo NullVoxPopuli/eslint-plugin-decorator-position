@@ -89,28 +89,56 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
       options: [{ onSameLine: ['@foo'] }],
-      errors: [{ message: 'Expected @foo to be inline' }],
+      errors: [{ message: 'Expected @foo to be inline.' }],
       output: stripIndent`
         class Foo {
           @foo foo;
         }
       `,
     },
-    // {
-    //   code: stripIndent`
-    //     class Foo {
-    //       @foo foo;
-    //     }
-    //   `,
-    //   options: [{ onDifferentLines: ['@foo'] }],
-    //   errors: [{ message: 'Expected @foo to be inline' }],
-    //   output: stripIndent`
-    //     class Foo {
-    //       @foo
-    //       foo;
-    //     }
-    //   `,
-    // },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo foo;
+        }
+      `,
+      options: [{ onDifferentLines: ['@foo'] }],
+      errors: [{ message: 'Expected @foo to be on the line above.' }],
+      output: stripIndent`
+        class Foo {
+          @foo
+          foo;
+        }
+      `,
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo
+          foo;
+
+          @foo(1) foo1;
+        }
+      `,
+      options: [
+        {
+          onSameLine: [['@foo', { withArgs: false }]],
+          onDifferentLines: [['@foo', { withArgs: true }]],
+        },
+      ],
+      errors: [
+        { message: 'Expected @foo to be inline.' },
+        { message: 'Expected @foo to be on the line above.' },
+      ],
+      output: stripIndent`
+        class Foo {
+          @foo foo;
+
+          @foo(1)
+          foo1;
+        }
+      `,
+    },
   ],
 });
 
@@ -126,20 +154,20 @@ tsRuleTester.run('TS: decorator-position', rule, {
     },
   ],
   invalid: [
-    // {
-    //   code: stripIndent`
-    //     export default class LocaleSwitcher extends Component<IArgs> {
-    //       @service
-    //       locale!: LocaleService;
-    //     }
-    //   `,
-    //   options: [{ onSameLine: ['@service'] }],
-    //   errors: [{ message: 'Expected @service to be inline' }],
-    //   output: stripIndent`
-    //     export default class LocaleSwitcher extends Component<IArgs> {
-    //       @service locale!: LocaleService;
-    //     }
-    //   `,
-    // },
+  //   {
+  //     code: stripIndent`
+  //       export default class LocaleSwitcher extends Component<IArgs> {
+  //         @service
+  //         locale!: LocaleService;
+  //       }
+  //     `,
+  //     options: [{ onSameLine: ['@service'] }],
+  //     errors: [{ message: 'Expected @service to be inline.' }],
+  //     output: stripIndent`
+  //       export default class LocaleSwitcher extends Component<IArgs> {
+  //         @service locale!: LocaleService;
+  //       }
+  //     `,
+  //   },
   ],
 });
