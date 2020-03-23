@@ -27,9 +27,7 @@ jobs:
     - uses: volta-cli/action@v1
       with:
         node-version: ${{ matrix.node }}
-
-    - name: Install
-      run: yarn install
+    - run: yarn install
 
     - name: Test with ${{ matrix.node }}
       run: |
@@ -45,20 +43,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: volta-cli/action@v1
-
-      - name: Install
-        run: |
-          yarn install
-          volta install semantic-release-cli
+      - run: yarn install
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          semantic-release-cli \
-            --gh-token=$GITHUB_TOKEN \
-            --npm-token=$NPM_TOKEN \
-            --gh-username=nullvoxpopuli \
-            --npm-username=nullvoxpopuli
-
+        run: yarn semantic-release
