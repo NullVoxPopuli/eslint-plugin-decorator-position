@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-decorator-position",
-  "version": "0.0.1-preview.4",
+  "version": "0.0.1-preview.5",
   "description": "ESLint plugin for enforcing decorator position",
   "main": "lib/index.js",
   "files": [
