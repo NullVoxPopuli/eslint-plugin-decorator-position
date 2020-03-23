@@ -50,5 +50,5 @@ jobs:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
 
-    - run: yarn install
-    - run: yarn commitlint
+    - run: volta install @commitlint/cli
+    - run: git log --pretty=format:%B master...HEAD | commitlint
