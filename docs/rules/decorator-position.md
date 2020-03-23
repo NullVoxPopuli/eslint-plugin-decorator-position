@@ -18,21 +18,23 @@ Examples of **incorrect** code for this rule:
 
 ```js
 // { onSameLine: ['@tracked', `@service`] }
-@tracked
-foo;
+class Foo {
+  @tracked
+  foo;
 
-@service
-store;
+  @service
+  store;
+}
 ```
 
 ```js
 // { onDifferentLines: ['@action', '@dependentKeyCompat'] }
-@action handleInput() {
+class Foo {
+  @action handleInput() {}
 
-}
-
-@dependentKeyCompat get myGetter() {
-
+  @dependentKeyCompat get myGetter() {
+    return '';
+  }
 }
 ```
 
@@ -45,31 +47,35 @@ store;
 //      ['@service', { withArgs: true }]
 //    ]
 // }
-@service
-foo;
+class Foo {
+  @service
+  foo;
 
-@service('foo') bar;
+  @service('foo') bar;
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
 // { onSameLine: ['@tracked', `@service`] }
-@tracked foo;
+class Foo {
+  @tracked foo;
 
-@service store;
+  @service store;
+}
 ```
 
 ```js
 // { onDifferentLines: ['@action', '@dependentKeyCompat'] }
-@action
-handleInput() {
+class Foo {
+  @action
+  handleInput() {}
 
-}
-
-@dependentKeyCompat
-get myGetter() {
-
+  @dependentKeyCompat
+  get myGetter() {
+    return '';
+  }
 }
 ```
 
@@ -82,10 +88,12 @@ get myGetter() {
 //      ['@service', { withArgs: true }]
 //    ]
 // }
-@service foo;
+class Foo {
+  @service foo;
 
-@service('foo')
-bar;
+  @service('foo')
+  bar;
+}
 ```
 
 ## Configuration
@@ -97,25 +105,29 @@ bar;
 Example:
 
 ```js
-rules: {
-  'decorator-position': [
-    'error',
-    {
-      onSameLine: [
-        '@tracked',
-        '@service',
-        '@attr',
-        ['@hasMany', { withArgs: false }],
-        ['@belongsTo', { withArgs: false }]
-      ],
-      onDifferentLines: [
-        '@dependentKeyCompat',
-        '@computed',
-        '@action',
-        ['@hasMany', { withArgs: true }],
-        ['@belongsTo', { withArgs: true }]
-      ],
-    },
-  ],
-}
+module.exports = {
+  parser: 'babel-eslint',
+  plugins: ['decorator-position'],
+  rules: {
+    'decorator-position': [
+      'error',
+      {
+        onSameLine: [
+          '@tracked',
+          '@service',
+          '@attr',
+          ['@hasMany', { withArgs: false }],
+          ['@belongsTo', { withArgs: false }]
+        ],
+        onDifferentLines: [
+          '@dependentKeyCompat',
+          '@computed',
+          '@action',
+          ['@hasMany', { withArgs: true }],
+          ['@belongsTo', { withArgs: true }]
+        ]
+      }
+    ]
+  }
+};
 ```

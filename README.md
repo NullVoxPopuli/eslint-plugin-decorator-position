@@ -29,17 +29,21 @@ npm install --save-dev eslint-plugin-decorator-position
 ```javascript
 // .eslintrc.js
 module.exports = {
-  plugins: ['ember'],
+  parser: 'babel-eslint',
+  // parser: '@typescript-eslint/parser',
+  plugins: ['decorator-position'],
   extends: [
-    'eslint:recommended',
     'plugin:decorator-position/ember' // or other configuration
   ],
   rules: {
     // override rule settings here
-    'decorator-position': ['error', {
-      onSameLine: ['@tracked'],
-      onDifferentLines: ['@computed'],
-    }]
+    'decorator-position': [
+      'error',
+      {
+        onSameLine: ['@tracked'],
+        onDifferentLines: ['@computed']
+      }
+    ]
   }
 };
 ```
