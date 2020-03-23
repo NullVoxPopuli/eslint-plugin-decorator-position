@@ -41,7 +41,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    needs: [tests, lint]
+    needs: [tests]
 
     steps:
       - uses: actions/checkout@v1

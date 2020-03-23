@@ -1,4 +1,4 @@
-name: CI
+name: Lint
 
 # Inspiration:
 # https://github.com/alexdiliberto/ember-transformicons/blob/master/.github/workflows/ci.yml
