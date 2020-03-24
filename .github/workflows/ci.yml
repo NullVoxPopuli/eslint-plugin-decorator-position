@@ -40,13 +40,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: volta-cli/action@v1
-    - name: Default Config for Ember Projects
-      run: |
-        yarn link
-        cd smoke-tests/ember
-        yarn
-        yarn link eslint-plugin-decorator-position
-        yarn eslint --noignore --config ../../lib/config/ember.js .
+
+    # One line per configuration
+    - run: ./scripts/smoke-test.sh ember
+
 
   publish:
     name: Release
