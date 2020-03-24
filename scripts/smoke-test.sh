@@ -10,4 +10,7 @@ yarn eslint \
   --no-ignore \
   --no-eslintrc \
   --config ../../lib/config/$1.js \
+  --fix \
   .
+
+git diff --exit-code ./
