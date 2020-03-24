@@ -4,6 +4,7 @@ logs
 
 # Dependencies
 node_modules
+smoke-tests/**/yarn.lock
 
 # Misc
 .eslintcache

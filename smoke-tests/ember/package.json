@@ -1,0 +1,11 @@
+{
+  "name": "ember",
+  "version": "0.0.0",
+  "description": "smoke-test",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "eslint-plugin-decorator-position": "^1.0.1"
+  }
+}

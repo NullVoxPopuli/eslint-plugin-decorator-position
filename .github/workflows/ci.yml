@@ -34,6 +34,20 @@ jobs:
         yarn test:coverage --runInBand
         yarn update && git diff --exit-code README.md docs/
 
+  smoke-tests:
+    name: Smoke Tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: volta-cli/action@v1
+    - name: Default Config for Ember Projects
+      run: |
+        yarn link
+        cd smoke-tests/ember
+        yarn
+        yarn link eslint-plugin-decorator-position
+        yarn eslint --noignore --config ../../lib/config/ember.js .
+
   publish:
     name: Release
     runs-on: ubuntu-latest
