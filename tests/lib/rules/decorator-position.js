@@ -79,6 +79,16 @@ ruleTester.run('JS: decorator-position', rule, {
         },
       ],
     },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          }) foo;
+        }
+      `,
+      options: [{ onSameLine: ['@foo'] }],
+    },
   ],
   invalid: [
     {
@@ -139,6 +149,25 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
     },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          }) foo;
+        }
+      `,
+      options: [{ onDifferentLines: ['@foo'] }],
+      errors: [{ message: 'Expected @foo to be on the line above.' }],
+      output: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          })
+          foo;
+        }
+      `,
+    },
   ],
 });
 
@@ -154,20 +183,20 @@ tsRuleTester.run('TS: decorator-position', rule, {
     },
   ],
   invalid: [
-    //   {
-    //     code: stripIndent`
-    //       export default class LocaleSwitcher extends Component<IArgs> {
-    //         @service
-    //         locale!: LocaleService;
-    //       }
-    //     `,
-    //     options: [{ onSameLine: ['@service'] }],
-    //     errors: [{ message: 'Expected @service to be inline.' }],
-    //     output: stripIndent`
-    //       export default class LocaleSwitcher extends Component<IArgs> {
-    //         @service locale!: LocaleService;
-    //       }
-    //     `,
-    //   },
+    {
+      code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service
+          locale!: LocaleService;
+        }
+      `,
+      options: [{ onSameLine: ['@service'] }],
+      errors: [{ message: 'Expected @service to be inline.' }],
+      output: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service locale!: LocaleService;
+        }
+      `,
+    },
   ],
 });
