@@ -53,7 +53,7 @@ module.exports = {
 |    | Name | Description |
 |:---|:-----|:------------|
 | | [base](./lib/config/base.js) | contains no rules settings, but the basic eslint configuration suitable for any project. You can use it to configure rules as you wish. |
-| :hamster: | [ember](./lib/ember-rules.js) | extends the `base` configuration by enabling the recommended rules for ember projects. |
+| :hamster: | [ember](./lib/config/ember.js) | extends the `base` configuration by enabling the recommended rules for ember projects. |
 
 ## 🍟 Rules
 
