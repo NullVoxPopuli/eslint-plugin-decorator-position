@@ -79,6 +79,16 @@ ruleTester.run('JS: decorator-position', rule, {
         },
       ],
     },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          }) foo;
+        }
+      `,
+      options: [{ onSameLine: ['@foo'] }],
+    },
   ],
   invalid: [
     {
@@ -136,6 +146,25 @@ ruleTester.run('JS: decorator-position', rule, {
 
           @foo(1)
           foo1;
+        }
+      `,
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          }) foo;
+        }
+      `,
+      options: [{ onDifferentLines: ['@foo'] }],
+      errors: [{ message: 'Expected @foo to be on the line above.' }],
+      output: stripIndent`
+        class Foo {
+          @foo({
+            bigDecorator: true,
+          })
+          foo;
         }
       `,
     },
