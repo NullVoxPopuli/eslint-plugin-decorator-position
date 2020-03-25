@@ -42,7 +42,9 @@ jobs:
     - uses: volta-cli/action@v1
 
     # One line per configuration
-    - run: ./scripts/smoke-test.sh ember
+    - run: |
+      ./scripts/smoke-test.sh -rules/position-default
+      ./scripts/smoke-test.sh ember
 
 
   publish:
