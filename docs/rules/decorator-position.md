@@ -125,7 +125,13 @@ module.exports = {
           '@action',
           ['@hasMany', { withArgs: true }],
           ['@belongsTo', { withArgs: true }]
-        ]
+        ],
+        defaults: {
+          properties: 'inline',
+
+          // includes getters
+          methods: 'above',
+        }
       }
     ]
   }

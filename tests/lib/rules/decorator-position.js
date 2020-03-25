@@ -103,7 +103,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'inline', methods: 'next-line' } }],
+      options: [{ defaults: { properties: 'inline', methods: 'above' } }],
     },
   ],
   invalid: [
@@ -198,7 +198,7 @@ ruleTester.run('JS: decorator-position', rule, {
           @foo foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'inline', methods: 'next-line' } }],
+      options: [{ defaults: { properties: 'inline', methods: 'above' } }],
       errors: [
         { message: 'Expected @foo to be inline.' },
         { message: 'Expected @foo to be inline.' },
@@ -233,7 +233,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'next-line', methods: 'inline' } }],
+      options: [{ defaults: { properties: 'above', methods: 'inline' } }],
       errors: [
         { message: 'Expected @foo to be on the line above.' },
         { message: 'Expected @foo to be on the line above.' },
