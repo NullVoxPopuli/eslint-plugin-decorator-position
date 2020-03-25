@@ -130,7 +130,7 @@ module.exports = {
           properties: 'inline',
 
           // includes getters
-          methods: 'above',
+          methods: 'above'
         }
       }
     ]
