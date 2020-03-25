@@ -89,6 +89,22 @@ ruleTester.run('JS: decorator-position', rule, {
       `,
       options: [{ onSameLine: ['@foo'] }],
     },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo foo;
+
+          @foo foo1 = 1;
+
+          @foo
+          get foo2() {}
+
+          @foo
+          foo3() {}
+        }
+      `,
+      options: [{ defaults: { properties: 'inline', methods: 'next-line' } }],
+    },
   ],
   invalid: [
     {
@@ -167,6 +183,76 @@ ruleTester.run('JS: decorator-position', rule, {
           foo;
         }
       `,
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo
+          foo;
+
+          @foo
+          foo1 = 1;
+
+          @foo get foo2() {}
+
+          @foo foo3() {}
+        }
+      `,
+      options: [{ defaults: { properties: 'inline', methods: 'next-line' } }],
+      errors: [
+        { message: 'Expected @foo to be inline.' },
+        { message: 'Expected @foo to be inline.' },
+        { message: 'Expected @foo to be on the line above.' },
+        { message: 'Expected @foo to be on the line above.' },
+      ],
+      output: stripIndent`
+      class Foo {
+        @foo foo;
+
+        @foo foo1 = 1;
+
+        @foo
+        get foo2() {}
+
+        @foo
+        foo3() {}
+      }
+    `,
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo foo;
+
+          @foo foo1 = 1;
+
+          @foo
+          get foo2() {}
+
+          @foo
+          foo3() {}
+        }
+      `,
+      options: [{ defaults: { properties: 'next-line', methods: 'inline' } }],
+      errors: [
+        { message: 'Expected @foo to be on the line above.' },
+        { message: 'Expected @foo to be on the line above.' },
+        { message: 'Expected @foo to be inline.' },
+        { message: 'Expected @foo to be inline.' },
+      ],
+      output: stripIndent`
+      class Foo {
+        @foo
+        foo;
+
+        @foo
+        foo1 = 1;
+
+        @foo get foo2() {}
+
+        @foo foo3() {}
+      }
+    `,
     },
   ],
 });
