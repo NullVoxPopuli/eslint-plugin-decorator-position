@@ -41,7 +41,11 @@ module.exports = {
       'error',
       {
         onSameLine: ['@tracked'],
-        onDifferentLines: ['@computed']
+        onDifferentLines: ['@computed'],
+        defaults: {
+          properties: 'inline',
+          methods: 'above',
+        }
       }
     ]
   }
