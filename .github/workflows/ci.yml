@@ -46,7 +46,6 @@ jobs:
       ./scripts/smoke-test.sh -rules/position-default
       ./scripts/smoke-test.sh ember
 
-
   publish:
     name: Release
     runs-on: ubuntu-latest
