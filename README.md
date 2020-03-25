@@ -44,7 +44,7 @@ module.exports = {
         onDifferentLines: ['@computed'],
         defaults: {
           properties: 'inline',
-          methods: 'above',
+          methods: 'above'
         }
       }
     ]
