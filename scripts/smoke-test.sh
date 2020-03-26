@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 target=$1
 yarn link
 
