@@ -9,4 +9,8 @@ export class Foo {
 
   @service myService;
   @service('named-service') namedService;
+
+  @hasMany('relation', {
+    someConfig: true,
+  }) relationship;
 }

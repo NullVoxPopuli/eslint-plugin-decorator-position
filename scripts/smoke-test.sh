@@ -1,5 +1,8 @@
 #!/bin/bash
+set -e
+
 target=$1
+yarn
 yarn link
 
 cd smoke-tests/$1
