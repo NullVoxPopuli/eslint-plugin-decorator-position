@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "babel-eslint": "*",
     "eslint-plugin-decorator-position": "*",
     "eslint": "*"
   }
