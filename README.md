@@ -37,7 +37,7 @@ module.exports = {
   ],
   rules: {
     // override rule settings from extends config here
-    'decorator-position': ['error', { /* your config */ }]
+    // 'decorator-position': ['error', { /* your config */ }]
   }
 };
 ```
