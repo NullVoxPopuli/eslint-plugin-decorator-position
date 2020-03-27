@@ -17,90 +17,38 @@ present in the rule's config.
 Examples of **incorrect** code for this rule:
 
 ```js
-// { onSameLine: ['@tracked', `@service`] }
 class Foo {
   @tracked
   foo;
 
   @service
   store;
-}
-```
 
-```js
-// { onDifferentLines: ['@action', '@dependentKeyCompat'] }
-class Foo {
-  @action handleInput() {}
-
-  @dependentKeyCompat get myGetter() {
-    return '';
-  }
-}
-```
-
-```js
-// {
-//    onSameLine: [
-//      ['@service', { withArgs: false }]
-//    ],
-//    onDifferentLines: [
-//      ['@service', { withArgs: true }]
-//    ]
-// }
-class Foo {
-  @service
-  foo;
-
-  @service('foo') bar;
+  @action doTheThing() {}
 }
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
-// { onSameLine: ['@tracked', `@service`] }
 class Foo {
   @tracked foo;
 
   @service store;
-}
-```
 
-```js
-// { onDifferentLines: ['@action', '@dependentKeyCompat'] }
-class Foo {
   @action
-  handleInput() {}
-
-  @dependentKeyCompat
-  get myGetter() {
-    return '';
-  }
-}
-```
-
-```js
-// {
-//    onSameLine: [
-//      ['@service', { withArgs: false }]
-//    ],
-//    onDifferentLines: [
-//      ['@service', { withArgs: true }]
-//    ]
-// }
-class Foo {
-  @service foo;
-
-  @service('foo')
-  bar;
+  doTheThing() {}
 }
 ```
 
 ## Configuration
 
 * object -- containing the following properties:
-  * `onSameLine` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on the same line as the thing it decorates.
-  * `onDifferentLines` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on a different line as the thing it decorates.
+  * `properties` -- either `'prefer-inline'` or `'above'` -- default: `'prefer-inline'`
+  * `methods` -- either `'prefer-inline'` or `'above'` -- default: `'above'`
+  * `overrides -- object -- allowing specific behavior for individual decorators
+    * `prefer-inline` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on the same line as the thing it decorates.
+    * `above` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on a different line as the thing it decorates.
 
 Example:
 
@@ -112,25 +60,14 @@ module.exports = {
     'decorator-position': [
       'error',
       {
-        onSameLine: [
-          '@tracked',
-          '@service',
-          '@attr',
-          ['@hasMany', { withArgs: false }],
-          ['@belongsTo', { withArgs: false }]
-        ],
-        onDifferentLines: [
-          '@dependentKeyCompat',
-          '@computed',
-          '@action',
-          ['@hasMany', { withArgs: true }],
-          ['@belongsTo', { withArgs: true }]
-        ],
-        defaults: {
-          properties: 'inline',
-
-          // includes getters
-          methods: 'above'
+        properties: 'prefer-inline',
+        methods: 'above',
+        overrides: {
+          'prefer-inline': [
+            ['@hasMany', { withArgs: false }],
+            ['@belongsTo', { withArgs: false }]
+          ],
+          above: ['@computed', ['@hasMany', { withArgs: true }], ['@belongsTo', { withArgs: true }]]
         }
       }
     ]

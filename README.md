@@ -40,12 +40,8 @@ module.exports = {
     'decorator-position': [
       'error',
       {
-        onSameLine: ['@tracked'],
-        onDifferentLines: ['@computed'],
-        defaults: {
-          properties: 'inline',
-          methods: 'above'
-        }
+        properties: 'above',
+        methods: 'prefer-inline'
       }
     ]
   }

@@ -20,6 +20,27 @@ const tsRuleTester = new RuleTester({ parser: tsParser });
 
 ruleTester.run('JS: decorator-position', rule, {
   valid: [
+    stripIndent`
+      class Foo {
+        @foo foo;
+      }
+    `,
+    stripIndent`
+      class Foo {
+        @foo foo1 = 1;
+      }`,
+    stripIndent`
+      class Foo {
+        @foo
+        get foo2() {
+          return '';
+        }
+      }`,
+    stripIndent`
+      class Foo {
+        @foo
+        foo3() {}
+      }`,
     {
       code: stripIndent`
         class Foo {
@@ -32,7 +53,7 @@ ruleTester.run('JS: decorator-position', rule, {
           @foo foo3() {}
         }
       `,
-      options: [{ onSameLine: ['@foo'] }],
+      options: [{ overrides: { 'prefer-inline': ['@foo'] } }],
     },
     {
       code: stripIndent`
@@ -50,7 +71,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo3() {}
         }
       `,
-      options: [{ onDifferentLines: ['@foo'] }],
+      options: [{ overrides: { above: ['@foo'] } }],
     },
     {
       code: stripIndent`
@@ -61,7 +82,7 @@ ruleTester.run('JS: decorator-position', rule, {
           @bar bar;
         }
       `,
-      options: [{ onSameLine: ['@bar'], onDifferentLines: ['@foo'] }],
+      options: [{ overrides: { above: ['@foo'], 'prefer-inline': ['@bar'] } }],
     },
     {
       code: stripIndent`
@@ -74,8 +95,10 @@ ruleTester.run('JS: decorator-position', rule, {
       `,
       options: [
         {
-          onSameLine: [['@foo', { withArgs: false }]],
-          onDifferentLines: [['@foo', { withArgs: true }]],
+          overrides: {
+            'prefer-inline': [['@foo', { withArgs: false }]],
+            above: [['@foo', { withArgs: true }]],
+          },
         },
       ],
     },
@@ -87,7 +110,7 @@ ruleTester.run('JS: decorator-position', rule, {
           }) foo;
         }
       `,
-      options: [{ onSameLine: ['@foo'] }],
+      options: [{ overrides: { 'prefer-inline': ['@foo'] } }],
     },
     {
       code: stripIndent`
@@ -103,7 +126,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'inline', methods: 'above' } }],
+      options: [{ properties: 'prefer-inline', methods: 'above' }],
     },
   ],
   invalid: [
@@ -114,7 +137,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo;
         }
       `,
-      options: [{ onSameLine: ['@foo'] }],
+      options: [{ overrides: { 'prefer-inline': ['@foo'] } }],
       errors: [{ message: 'Expected @foo to be inline.' }],
       output: stripIndent`
         class Foo {
@@ -128,7 +151,7 @@ ruleTester.run('JS: decorator-position', rule, {
           @foo foo;
         }
       `,
-      options: [{ onDifferentLines: ['@foo'] }],
+      options: [{ overrides: { above: ['@foo'] } }],
       errors: [{ message: 'Expected @foo to be on the line above.' }],
       output: stripIndent`
         class Foo {
@@ -148,8 +171,10 @@ ruleTester.run('JS: decorator-position', rule, {
       `,
       options: [
         {
-          onSameLine: [['@foo', { withArgs: false }]],
-          onDifferentLines: [['@foo', { withArgs: true }]],
+          overrides: {
+            'prefer-inline': [['@foo', { withArgs: false }]],
+            above: [['@foo', { withArgs: true }]],
+          },
         },
       ],
       errors: [
@@ -173,7 +198,7 @@ ruleTester.run('JS: decorator-position', rule, {
           }) foo;
         }
       `,
-      options: [{ onDifferentLines: ['@foo'] }],
+      options: [{ overrides: { above: ['@foo'] } }],
       errors: [{ message: 'Expected @foo to be on the line above.' }],
       output: stripIndent`
         class Foo {
@@ -198,7 +223,7 @@ ruleTester.run('JS: decorator-position', rule, {
           @foo foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'inline', methods: 'above' } }],
+      options: [{ properties: 'prefer-inline', methods: 'above' }],
       errors: [
         { message: 'Expected @foo to be inline.' },
         { message: 'Expected @foo to be inline.' },
@@ -233,7 +258,7 @@ ruleTester.run('JS: decorator-position', rule, {
           foo3() {}
         }
       `,
-      options: [{ defaults: { properties: 'above', methods: 'inline' } }],
+      options: [{ properties: 'above', methods: 'prefer-inline' }],
       errors: [
         { message: 'Expected @foo to be on the line above.' },
         { message: 'Expected @foo to be on the line above.' },
@@ -265,7 +290,7 @@ tsRuleTester.run('TS: decorator-position', rule, {
           @service locale!: LocaleService;
         }
       `,
-      options: [{ onSameLine: ['@service'] }],
+      options: [{ overrides: { 'prefer-inline': ['@service'] } }],
     },
   ],
   invalid: [
@@ -276,7 +301,7 @@ tsRuleTester.run('TS: decorator-position', rule, {
           locale!: LocaleService;
         }
       `,
-      options: [{ onSameLine: ['@service'] }],
+      options: [{ overrides: { 'prefer-inline': ['@service'] } }],
       errors: [{ message: 'Expected @service to be inline.' }],
       output: stripIndent`
         export default class LocaleSwitcher extends Component<IArgs> {

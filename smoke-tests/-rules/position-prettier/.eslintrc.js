@@ -5,14 +5,6 @@ module.exports = {
   ],
   plugins: ["prettier"],
   rules: {
-    'decorator-position/decorator-position': [
-      'error',
-      {
-        defaults: {
-          properties: 'inline',
-          methods: 'above',
-        }
-      },
-    ],
+    'decorator-position/decorator-position': ['error'],
   },
 };
