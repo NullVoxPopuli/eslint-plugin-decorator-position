@@ -13,4 +13,9 @@ export class Foo {
   @hasMany('relation', {
     someConfig: true,
   }) relationship;
+
+  @(task(function* () {
+    // some task
+  }).drop())
+  someTask;
 }
