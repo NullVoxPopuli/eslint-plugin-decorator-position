@@ -36,14 +36,8 @@ module.exports = {
     'plugin:decorator-position/ember' // or other configuration
   ],
   rules: {
-    // override rule settings here
-    'decorator-position': [
-      'error',
-      {
-        properties: 'above',
-        methods: 'prefer-inline'
-      }
-    ]
+    // override rule settings from extends config here
+    // 'decorator-position': ['error', { /* your config */ }]
   }
 };
 ```
