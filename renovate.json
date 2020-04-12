@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base",
+    ":semanticCommits"
+  ],
+  "ignorePaths": [
+    "tests",
+    "smoke-tests"  
+  ],
+  "automerge": true,
+  "masterIssue": true
+}
