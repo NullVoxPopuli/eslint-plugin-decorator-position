@@ -1,7 +1,7 @@
 {
   "extends": [
     "config:base",
-    "config:semanticCommits"
+    ":semanticCommits"
   ],
   "ignorePaths": [
     "tests",
