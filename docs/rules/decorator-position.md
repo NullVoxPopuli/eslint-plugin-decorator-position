@@ -57,7 +57,7 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['decorator-position'],
   rules: {
-    'decorator-position': [
+    'decorator-position/decorator-position': [
       'error',
       {
         properties: 'prefer-inline',
