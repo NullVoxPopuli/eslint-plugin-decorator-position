@@ -23,6 +23,9 @@ ruleTester.run('JS: decorator-position', rule, {
     stripIndent`
       class Foo {
         @foo foo;
+
+        @alias('foo.bar.baz.someReallyLongPropertyNameThatIsTooLongToBeInlineOrItBreaksPrettier.Prettier.is.Set.to.100')
+        myProp;
       }
     `,
     stripIndent`

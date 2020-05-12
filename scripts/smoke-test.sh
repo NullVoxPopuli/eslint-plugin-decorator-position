@@ -3,6 +3,14 @@ set -e
 
 target=$1
 
+echo "About to test scenario: $target"
+echo ""
+echo "Available scenarios:"
+echo "  -rules/position-default"
+echo "  -rules/position-prettier"
+echo "  ember"
+echo ""
+
 name="eslint-plugin-decorator-position"
 
 yarn

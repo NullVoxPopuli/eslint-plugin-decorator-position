@@ -18,6 +18,8 @@
     "lint:js": "eslint . --cache",
     "start": "yarn run test:watch",
     "test": "jest",
+    "test:debug": "node --inspect node_modules/.bin/jest --watch --runInBand",
+    "test:debug-watch": "node --inspect node_modules/.bin/jest --runInBand",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
     "update": "node ./scripts/update-rules.js",
@@ -62,7 +64,6 @@
     "@typescript-eslint/parser": "3.2.0",
     "babel-eslint": "10.1.0",
     "common-tags": "1.8.0",
-    "eslint": "7.2.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-eslint-plugin": "2.2.2",
@@ -84,7 +85,9 @@
   "dependencies": {
     "@ember-data/rfc395-data": "^0.0.4",
     "ember-rfc176-data": "^0.3.12",
-    "snake-case": "^3.0.3"
+    "snake-case": "^3.0.3",
+    "prettier": "2.0.5",
+    "eslint": "7.2.0"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
