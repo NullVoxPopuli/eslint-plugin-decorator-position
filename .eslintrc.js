@@ -143,6 +143,7 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/no-reduce': 'off',
     'unicorn/no-fn-reference-in-iterator': 'off',
+    'unicorn/no-useless-undefined': 'off',
   },
   overrides: [
     {
