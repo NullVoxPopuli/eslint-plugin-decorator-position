@@ -14,6 +14,7 @@ env:
 
 jobs:
   tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Test
     runs-on: ubuntu-latest
     strategy:
@@ -34,6 +35,7 @@ jobs:
         yarn update && git diff --exit-code README.md docs/
 
   smoke-tests:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Smoke Tests
     runs-on: ubuntu-latest
     steps:
