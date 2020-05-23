@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.0.4...v2.1.0) (2020-05-23)
+
+
+### Bug Fixes
+
+* backfill changelog ([c3ea94f](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/c3ea94fd0b50f27fe53fe8d31866cd36e666797b))
+
+
+### Features
+
+* **internal:** support changelog generation ([e89171c](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/e89171c3fc5448e8bc4210acba601b1a35688721))
+
 ## [1.0.3](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.0.4...v1.0.3) (2020-05-23)
 
 
@@ -85,6 +97,3 @@ less overall configuration between projects.
 * use correct semantic-release-cli command ([6ebae4f](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/6ebae4fc65a3c4f14a7cf3449ad60c4e87c929ce))
 * use correct semantic-release-cli command ([ac5afdf](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/ac5afdf5b9ee909bd0c9bd4dd788b2594a942b1b))
 * use correct semantic-release-cli command ([afa8188](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/afa81888141b8d608491a967565855cc138b26d8))
-
-
-
