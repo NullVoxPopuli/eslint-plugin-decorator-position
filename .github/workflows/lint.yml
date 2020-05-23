@@ -14,6 +14,7 @@ env:
 
 jobs:
   lint:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +25,7 @@ jobs:
     - run: yarn lint:js
 
   docs:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Docs
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +36,7 @@ jobs:
     - run: yarn lint:docs
 
   docs-js:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Docs (JS)
     runs-on: ubuntu-latest
     steps:
@@ -44,6 +47,7 @@ jobs:
     - run: yarn lint:docs-js
 
   commits:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Commit Messages
     runs-on: ubuntu-latest
     steps:
