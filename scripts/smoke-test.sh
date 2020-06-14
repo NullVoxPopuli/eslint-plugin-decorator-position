@@ -8,6 +8,7 @@ echo ""
 echo "Available scenarios:"
 echo "  -rules/position-default"
 echo "  -rules/position-prettier"
+echo "  -rules/external-config-prettier"
 echo "  ember"
 echo ""
 
