@@ -45,6 +45,7 @@ jobs:
     # One line per configuration
     - run: ./scripts/smoke-test.sh -rules/position-default
     - run: ./scripts/smoke-test.sh -rules/position-prettier
+    - run: ./scripts/smoke-test.sh -rules/external-config-prettier
     - run: ./scripts/smoke-test.sh ember
 
   publish:
