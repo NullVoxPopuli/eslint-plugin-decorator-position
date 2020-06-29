@@ -1,3 +1,11 @@
+# [2.2.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.1.0...v2.2.0) (2020-06-29)
+
+
+### Features
+
+* support printWidth and optionally inherit from prettier config ([e3e621d](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/e3e621d5aeda67931217cab874f16ebdf623d8ec))
+* take alternate path when line length is greater than printWidth ([09c4440](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/09c44403e55c05df138344f1d538516e258db7c2))
+
 # [2.1.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.0.4...v2.1.0) (2020-05-23)
 
 
