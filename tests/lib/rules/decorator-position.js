@@ -23,6 +23,9 @@ ruleTester.run('JS: decorator-position', rule, {
     stripIndent`
       class Foo {
         @foo foo;
+
+        @alias('foo.bar.baz.someReallyLongPropertyNameThatIsTooLongToBeInlineOrItBreaksPrettier.Prettier.is.Set.to.100')
+        myProp;
       }
     `,
     stripIndent`
@@ -115,6 +118,28 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
+          @foo('bizbangbarbazboo') fizz;
+
+          @action('bidgbarbazboo') fizz;
+        }
+      `,
+      options: [{ printWidth: 30 }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo('bizbangbarbazboo')
+          fizz;
+
+          @action('bidgbarbazboo')
+          fizz;
+        }
+      `,
+      options: [{ printWidth: 10 }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
           @foo foo;
 
           @foo foo1 = 1;
@@ -130,6 +155,21 @@ ruleTester.run('JS: decorator-position', rule, {
     },
   ],
   invalid: [
+    {
+      code: stripIndent`
+        class Foo {
+          @alias('foo.bar.baz.someReallyLongPropertyNameThatIsTooLongToBeInlineOrItBreaksPrettier') foo;
+        }
+      `,
+      options: [{ printWidth: 50 }],
+      errors: [{ message: 'Expected @alias to be on the line above.' }],
+      output: stripIndent`
+        class Foo {
+          @alias('foo.bar.baz.someReallyLongPropertyNameThatIsTooLongToBeInlineOrItBreaksPrettier')
+          foo;
+        }
+      `,
+    },
     {
       code: stripIndent`
         class Foo {
