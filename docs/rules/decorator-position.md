@@ -44,6 +44,7 @@ class Foo {
 ## Configuration
 
 * object -- containing the following properties:
+  * `printWidth` -- number -- sets the maximum line length allowed for inlining the decorator and the thing it decorates
   * `properties` -- either `'prefer-inline'` or `'above'` -- default: `'prefer-inline'`
   * `methods` -- either `'prefer-inline'` or `'above'` -- default: `'above'`
   * `overrides -- object -- allowing specific behavior for individual decorators
@@ -60,6 +61,7 @@ module.exports = {
     'decorator-position/decorator-position': [
       'error',
       {
+        printWidth: 100,
         properties: 'prefer-inline',
         methods: 'above',
         overrides: {
