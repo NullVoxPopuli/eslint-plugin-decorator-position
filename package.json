@@ -64,7 +64,7 @@
     "@typescript-eslint/parser": "4.2.0",
     "babel-eslint": "10.1.0",
     "common-tags": "1.8.0",
-    "eslint": "7.9.0",
+    "eslint": "7.10.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-eslint-plugin": "2.3.0",
@@ -88,7 +88,7 @@
     "ember-rfc176-data": "^0.3.12",
     "snake-case": "^3.0.3",
     "prettier": "2.1.2",
-    "eslint": "7.9.0"
+    "eslint": "7.10.0"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
