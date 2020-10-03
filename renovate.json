@@ -8,5 +8,11 @@
     "smoke-tests"  
   ],
   "automerge": true,
-  "masterIssue": true
+  "masterIssue": true,
+  "packageRules": [
+    {
+      "packageNames": ["eslint"],
+      "rangeStrategy": "bump"
+    }
+  ]
 }
