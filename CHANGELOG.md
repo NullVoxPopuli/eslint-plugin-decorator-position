@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.1...v2.2.2) (2020-10-03)
+
+
+### Bug Fixes
+
+* widen eslint version in package.json ([46fc297](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/46fc297f40746018fd5de0b667849d71675c0d62))
+
 ## [2.2.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.0...v2.2.1) (2020-06-29)
 
 
