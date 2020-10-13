@@ -332,6 +332,18 @@ tsRuleTester.run('TS: decorator-position', rule, {
       `,
       options: [{ overrides: { 'prefer-inline': ['@service'] } }],
     },
+    {
+      code: stripIndent`
+        export default class Foo {
+          @service('addon-name/-private/do-not-use/the-name-of-the-service')
+          declare someObfuscatedPrivateService: Service;
+
+          @service('addon-name/-private/do-not-use/the-name-of-the-service')
+          declare shorterName: Service;
+        }
+      `,
+      options: [{ printWidth: 100 }],
+    },
   ],
   invalid: [
     {
