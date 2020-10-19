@@ -47,6 +47,7 @@ jobs:
     - run: ./scripts/smoke-test.sh -rules/position-prettier
     - run: ./scripts/smoke-test.sh -rules/external-config-prettier
     - run: ./scripts/smoke-test.sh ember
+    - run: ./scripts/smoke-test.sh -examples/typescript
 
   publish:
     name: Release
