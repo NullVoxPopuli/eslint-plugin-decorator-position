@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     'ember',
+    'decorator-position',
     // 'example',
   ],
   extends: [
