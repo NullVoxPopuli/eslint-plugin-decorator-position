@@ -1,0 +1,32 @@
+{
+  "name": "main-app",
+  "version": "0.0.0",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint . --cache",
+    "start": "ember serve",
+    "test": "ember test"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^7.9.0",
+    "eslint-plugin-decorator-position": "^2.2.1",
+    "eslint-plugin-ember": "^7.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "loader.js": "^4.7.0"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+  }
+}

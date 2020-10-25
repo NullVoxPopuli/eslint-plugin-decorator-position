@@ -34,6 +34,10 @@ if [[ $target == *"examples"* ]]; then
   config_path=".eslintrc.js"
 fi
 
+if [[ $target == *"reproductions"* ]]; then
+  config_path=".eslintrc.js"
+fi
+
 yarn
 yarn link $name
 
