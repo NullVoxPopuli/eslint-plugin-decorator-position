@@ -43,11 +43,12 @@ jobs:
     - uses: volta-cli/action@v1
 
     # One line per configuration
-    - run: ./scripts/smoke-test.sh -rules/position-default
-    - run: ./scripts/smoke-test.sh -rules/position-prettier
-    - run: ./scripts/smoke-test.sh -rules/external-config-prettier
-    - run: ./scripts/smoke-test.sh ember
-    - run: ./scripts/smoke-test.sh -examples/typescript
+    - run: ./scripts/smoke-test.sh smoke-tests/integration/position-default
+    - run: ./scripts/smoke-test.sh smoke-tests/integration/position-prettier
+    - run: ./scripts/smoke-test.sh smoke-tests/integration/external-config-prettier
+    - run: ./scripts/smoke-test.sh smoke-tests/examples/ember
+    - run: ./scripts/smoke-test.sh smoke-tests/examples/typescript
+    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/147
 
   publish:
     name: Release
