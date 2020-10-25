@@ -23,6 +23,8 @@ else
     -o -name 'package.json' \
     -printf '%h\n' | sort --unique)
 
+  smoke_tests=$(echo "$smoke_tests" | sed -e "s/$TEST_DIR\///")
+
   title="List of available smoke-tests"
   prompt="Select Test: "
   options=($smoke_tests)
@@ -40,7 +42,7 @@ else
       echo "Goodbye!"
       exit
     elif [ "${options[$REPLY]}" != "" ]; then
-      target=$opt
+      target="$TEST_DIR/$opt"
       break;
     else
       echo "Invalid option. Try another one."
