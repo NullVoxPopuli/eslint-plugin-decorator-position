@@ -87,7 +87,7 @@
     "ember-rfc176-data": "^0.3.12",
     "snake-case": "^3.0.3",
     "prettier": "2.1.2",
-    "eslint": "^7.12.0"
+    "eslint": "^7.12.1"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
