@@ -1,3 +1,10 @@
+## [2.2.6](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.5...v2.2.6) (2020-10-30)
+
+
+### Bug Fixes
+
+* **readme:** ESLint configuration key name matches rule name ([#189](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/189)) ([7935c85](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/7935c85c6b78123ee50b66550b68893740e5d13e))
+
 ## [2.2.5](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.4...v2.2.5) (2020-10-27)
 
 
