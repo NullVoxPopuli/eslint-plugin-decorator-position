@@ -52,11 +52,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - uses: volta-cli/action@v1
+    - uses: wagoid/commitlint-github-action@v2.1.0
 
-    - uses: wagoid/commitlint-github-action@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
     # - run: yarn && volta install @commitlint/cli
     # - run: |
