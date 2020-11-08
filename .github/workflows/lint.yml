@@ -53,10 +53,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: volta-cli/action@v1
-
     - uses: wagoid/commitlint-github-action@v2.1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
 
     # - run: yarn && volta install @commitlint/cli
     # - run: |
