@@ -21,10 +21,21 @@ describe('rules setup is correct', function () {
     const path = join(__dirname, '..', 'tests', 'lib', 'rules');
     const files = readdirSync(path);
 
-    // eslint-disable-next-line jest/prefer-strict-equal
-    expect(RULE_NAMES).toEqual(
-      files.filter((file) => !file.startsWith('.')).map((file) => file.replace('.js', ''))
-    );
+    const testFiles = files
+      .filter((file) => !file.startsWith('.'))
+      .map((file) => file.replace('.js', ''));
+
+    for (const rule of RULE_NAMES) {
+      let success = false;
+
+      for (const testFile of testFiles) {
+        if (testFile.startsWith(rule)) {
+          success = true;
+        }
+      }
+
+      expect(success).toBe(true);
+    }
   });
 
   it('should have documentation for all rules', function () {
