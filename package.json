@@ -101,7 +101,8 @@
   },
   "jest": {
     "testPathIgnorePatterns": [
-      "<rootDir>/tests/helpers/"
+      "<rootDir>/tests/helpers/",
+      "<rootDir>/smoke-tests/"
     ],
     "testMatch": [
       "**/tests/**/*.js"
