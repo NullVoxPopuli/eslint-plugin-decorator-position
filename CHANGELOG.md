@@ -1,3 +1,10 @@
+## [2.2.11](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.10...v2.2.11) (2020-11-09)
+
+
+### Bug Fixes
+
+* **typo:** warning flag should be false by default ([e019bf2](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/e019bf2ccba5778fc78b7ae469dec2cc72a5ef73))
+
 ## [2.2.10](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.9...v2.2.10) (2020-11-09)
 
 
