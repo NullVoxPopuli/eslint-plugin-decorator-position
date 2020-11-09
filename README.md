@@ -90,13 +90,15 @@ Note that new rules should not immediately be added to the [recommended](./lib/r
 ### Running smoke tests and creating reproductions
 
 To run smoke tests:
-```
+
+```shell
 ./scripts/smoke-test.sh
 ```
 
 it will prompt you with which test to run.
 
 To create a reproduction,
+
 1. first make sure there is an open issue describing the problem your encountering.
 2. then create a folder in `smoke-tests/issue-reproductions/` named ofter the issue number.
    example: `smoke-tests/issue-reproductions/196/`
