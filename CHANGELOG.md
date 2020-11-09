@@ -1,3 +1,10 @@
+## [2.2.8](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.7...v2.2.8) (2020-11-09)
+
+
+### Bug Fixes
+
+* **#195:** decorators using declare now respect prettier ([607f4ba](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/607f4bafed1a65a85ba540eca5ac525c1c03781c)), closes [#195](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/195)
+
 ## [2.2.7](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.6...v2.2.7) (2020-11-08)
 
 
