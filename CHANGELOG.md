@@ -1,3 +1,10 @@
+## [2.2.9](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.8...v2.2.9) (2020-11-09)
+
+
+### Bug Fixes
+
+* **#196:** fix prettier unspecified printWidth ([2c327c8](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/2c327c87464152a86998baab26034305ff007a1a)), closes [#195](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/195)
+
 ## [2.2.8](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.7...v2.2.8) (2020-11-09)
 
 
