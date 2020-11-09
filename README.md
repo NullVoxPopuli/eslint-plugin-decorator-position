@@ -87,6 +87,24 @@ If you have any suggestions, ideas, or problems, feel free to [create an issue](
 
 Note that new rules should not immediately be added to the [recommended](./lib/recommended-rules.js) configuration, as we only consider such breaking changes during major version updates.
 
+### Running smoke tests and creating reproductions
+
+To run smoke tests:
+```
+./scripts/smoke-test.sh
+```
+
+it will prompt you with which test to run.
+
+To create a reproduction,
+1. first make sure there is an open issue describing the problem your encountering.
+2. then create a folder in `smoke-tests/issue-reproductions/` named ofter the issue number.
+   example: `smoke-tests/issue-reproductions/196/`
+3. The minimum required files are:
+   - package.json - for declaring which dependencies are being tested (or `*` if it doesn't matter for your particular test)
+   - a js or ts file to demonstrate the "correct" state. After a smoke-test runs, a git diff is checked to ensure 0 changes.
+   - .eslintrc.js - to define what configuration / rules / plugins / etc may be relevant.
+
 ## 🔓 License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
