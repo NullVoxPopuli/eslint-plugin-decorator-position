@@ -1,0 +1,15 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "smoke-test",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@typescript-eslint/parser": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "eslint-plugin-decorator-position": "*",
+    "eslint": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-config-prettier": "*"
+  }
+}

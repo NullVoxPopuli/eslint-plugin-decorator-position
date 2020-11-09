@@ -29,11 +29,16 @@ tsRuleTester.run('TS: decorator-position', rule, {
     {
       code: stripIndent`
         export default class Foo {
+          // Would be 113 characters inline
           @service('addon-name/-private/do-not-use/the-name-of-the-service')
           declare someObfuscatedPrivateService: Service;
 
+          // 96 characters
+          @service('addon-name/-private/do-not-use/the-name-of-the-service') declare shorterName: Service;
+
+          // Would be 115 characters inline
           @service('addon-name/-private/do-not-use/the-name-of-the-service')
-          declare shorterName: Service;
+          declare someObfuscatedPrivateService2:! Service;
         }
       `,
       options: [{ printWidth: 100 }],
