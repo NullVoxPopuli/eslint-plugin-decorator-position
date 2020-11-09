@@ -105,6 +105,14 @@ To create a reproduction,
    - a js or ts file to demonstrate the "correct" state. After a smoke-test runs, a git diff is checked to ensure 0 changes.
    - .eslintrc.js - to define what configuration / rules / plugins / etc may be relevant.
 
+## SemVer Policy
+
+How does this project interpret patch / minor / breaking changes?
+
+- **patch**: a change that fixes currently broken behavior. Does not cause formatting to change when people update unless a previous patch/feature accidentally broke formatting in a **breaking** way.
+- **minor**: a change that does not impact formatting
+- **breaking**: a major change that is not backwards compatible and would intentionally cause formatting changes to occur
+
 ## 🔓 License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
