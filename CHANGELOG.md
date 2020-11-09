@@ -1,3 +1,10 @@
+## [2.2.10](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.9...v2.2.10) (2020-11-09)
+
+
+### Bug Fixes
+
+* **#198:** fix issue [#198](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/198) by only displaying warn once ([98a18a1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/98a18a13e154f3dd768688f5c9f6a0a1838df38a))
+
 ## [2.2.9](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.8...v2.2.9) (2020-11-09)
 
 
