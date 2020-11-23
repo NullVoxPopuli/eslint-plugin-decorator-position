@@ -49,6 +49,8 @@ jobs:
     - run: ./scripts/smoke-test.sh smoke-tests/examples/ember
     - run: ./scripts/smoke-test.sh smoke-tests/examples/typescript
     - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/147
+    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/195
+    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/196
 
   publish:
     name: Release

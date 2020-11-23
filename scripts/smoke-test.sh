@@ -64,6 +64,9 @@ config_path=".eslintrc.js"
 yarn
 yarn link $name
 
+yarn list eslint
+yarn list prettier
+
 # ls -la node_modules/$name
 
 yarn eslint \
