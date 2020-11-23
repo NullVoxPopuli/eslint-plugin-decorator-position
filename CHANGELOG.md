@@ -1,3 +1,11 @@
+## [2.2.13](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.12...v2.2.13) (2020-11-23)
+
+
+### Bug Fixes
+
+* **#214:** update private prettier path ([a141e7a](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/a141e7a109eea69dae6d11a949e3a635fbbd42eb)), closes [#214](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/214)
+* **internal:** ci was missing two smoke tests ([27080ce](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/27080ce80bc062d836fee5142e7935bf3fff71fd))
+
 ## [2.2.12](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.11...v2.2.12) (2020-11-21)
 
 
