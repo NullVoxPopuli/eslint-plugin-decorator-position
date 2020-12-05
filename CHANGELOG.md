@@ -1,3 +1,10 @@
+## [2.2.14](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.13...v2.2.14) (2020-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint to ^7.15.0 ([c174771](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/c174771b8d7a2b4f527a663f440f761e5b14610a))
+
 ## [2.2.13](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.12...v2.2.13) (2020-11-23)
 
 
