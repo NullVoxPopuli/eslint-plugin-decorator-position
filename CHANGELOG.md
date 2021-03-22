@@ -1,3 +1,10 @@
+## [2.2.20](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.19...v2.2.20) (2021-03-22)
+
+
+### Bug Fixes
+
+* include indentation when counting line width ([b86643a](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/b86643a358425e5e6bcf78497140b2c2d44004db))
+
 ## [2.2.19](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.18...v2.2.19) (2021-02-13)
 
 
