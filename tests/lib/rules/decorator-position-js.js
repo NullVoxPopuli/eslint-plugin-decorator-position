@@ -151,6 +151,16 @@ ruleTester.run('JS: decorator-position', rule, {
       `,
       options: [{ properties: 'prefer-inline', methods: 'above' }],
     },
+    {
+      code: stripIndent`
+        class Foo {
+          @foo('bizbangbarbazboo')
+          fizz;
+        }
+      `,
+      // print width is one less than the decorator would be on one line
+      options: [{ printWidth: 31 }],
+    },
   ],
   invalid: [
     {
