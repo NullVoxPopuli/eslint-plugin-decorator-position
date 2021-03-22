@@ -5,11 +5,11 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@typescript-eslint/parser": "*",
-    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
     "eslint-plugin-decorator-position": "*",
-    "eslint": "*",
-    "eslint-plugin-prettier": "*",
-    "eslint-config-prettier": "*"
+    "eslint": "^7.22.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-config-prettier": "^8.1.0"
   }
 }
