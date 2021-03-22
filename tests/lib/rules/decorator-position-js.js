@@ -116,9 +116,13 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
-          @foo('bizbangbarbazboo') fizz;
+          // 32 characters
+          @foo('bizbangbarbazboo')
+          fizz;
 
-          @action('bidgbarbazboo') fizz;
+          // 32 characters
+          @action('bidgbarbazboo')
+          fizz;
         }
       `,
       options: [{ printWidth: 30 }],
@@ -150,6 +154,17 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
       options: [{ properties: 'prefer-inline', methods: 'above' }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
+          // one character over inline max printWidth
+          @foo('bizbangbarbazboo')
+          fizz;
+        }
+      `,
+      // print width is one less than the decorator would be on one line
+      options: [{ printWidth: 31 }],
     },
   ],
   invalid: [
