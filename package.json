@@ -20,6 +20,7 @@
     "test": "jest",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
     "test:debug-watch": "node --inspect node_modules/.bin/jest --watch --runInBand",
+    "test:debug:named": "node --inspect node_modules/.bin/jest --runInBand --watch --testNamePattern",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
     "update": "node ./scripts/update-rules.js",
