@@ -55,7 +55,7 @@ jobs:
       with:
         fetch-depth: 0
     - uses: volta-cli/action@v1
-    - uses: wagoid/commitlint-github-action@v3.0.6
+    - uses: wagoid/commitlint-github-action@v3.0.7
 
 
     # - run: yarn && volta install @commitlint/cli
