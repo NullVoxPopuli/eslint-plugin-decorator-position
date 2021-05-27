@@ -1,3 +1,10 @@
+## [2.2.27](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.26...v2.2.27) (2021-05-27)
+
+
+### Bug Fixes
+
+* **deps:** move linter deps to peer deps ([a97d8ff](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/a97d8fff481b24c1874325b603920adb43ab219f))
+
 ## [2.2.26](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.25...v2.2.26) (2021-05-22)
 
 
