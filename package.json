@@ -90,7 +90,7 @@
     "snake-case": "^3.0.3"
   },
   "peerDependencies": {
-    "eslint": "^7.0.0"
+    "eslint": "^7.27.0"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
