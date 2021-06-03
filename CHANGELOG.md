@@ -1,3 +1,10 @@
+## [2.2.28](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.27...v2.2.28) (2021-06-03)
+
+
+### Bug Fixes
+
+* **#337:** wrap require prettier in a try-catch so that we don't throw when dep tree has no prettier ([f7594ff](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/f7594ff04a4da8e5f224162a71b749f738577561)), closes [#337](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/337)
+
 ## [2.2.27](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.26...v2.2.27) (2021-05-27)
 
 
