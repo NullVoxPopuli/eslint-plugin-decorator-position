@@ -6,7 +6,7 @@ module.exports = {
     ecmaVersion: 2019,
     sourceType: 'script',
   },
-  plugins: ['eslint-plugin', 'filenames', 'import', 'jest', 'node', 'prettier', 'unicorn'],
+  plugins: ['eslint-plugin', 'filenames', 'import', 'jest', 'node', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
@@ -16,7 +16,6 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:node/recommended',
-    'plugin:unicorn/recommended',
     'prettier',
   ],
   env: {
@@ -138,12 +137,6 @@ module.exports = {
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'import/unambiguous': 'error',
-
-    // Unicorn rules:
-    'unicorn/prevent-abbreviations': 'off',
-    'unicorn/no-reduce': 'off',
-    'unicorn/no-fn-reference-in-iterator': 'off',
-    'unicorn/no-useless-undefined': 'off',
   },
   overrides: [
     {
@@ -185,7 +178,6 @@ module.exports = {
         'node/no-missing-require': 'off',
         'node/no-unsupported-features/es-syntax': 'off',
         'prettier/prettier': ['error', { trailingComma: 'none' }],
-        'unicorn/filename-case': 'off',
       },
     },
   ],
