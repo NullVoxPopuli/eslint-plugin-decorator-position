@@ -63,8 +63,10 @@ describe('rules setup is correct', function () {
       expect(file).toContain('## Examples'); // Examples section header.
 
       if (rule.meta.fixable === 'code') {
+        // eslint-disable-next-line jest/no-conditional-expect
         expect(file).toContain(FIXABLE_MSG);
       } else {
+        // eslint-disable-next-line jest/no-conditional-expect
         expect(file).not.toContain(FIXABLE_MSG);
       }
     });
