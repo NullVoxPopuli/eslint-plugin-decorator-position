@@ -1,3 +1,10 @@
+## [2.2.29](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.28...v2.2.29) (2021-07-20)
+
+
+### Bug Fixes
+
+* **313:** only count chars on first line of multi-line decorator value ([1a1bc21](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/1a1bc218f06d32429aa63607497fcbbd569a6fc9))
+
 ## [2.2.28](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.27...v2.2.28) (2021-06-03)
 
 
