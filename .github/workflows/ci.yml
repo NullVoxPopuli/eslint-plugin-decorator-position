@@ -52,6 +52,7 @@ jobs:
     - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/195
     - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/196
     - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/289
+    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/313
 
   publish:
     name: Release
