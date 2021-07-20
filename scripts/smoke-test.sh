@@ -54,27 +54,37 @@ fi
 
 name="eslint-plugin-decorator-position"
 
-yarn
-yarn link
+function quietYarn() {
+  echo "yarn $@"
+  yarn $@ --no-progress --non-interactive --emoji --silent 2> >(grep -v warning 1>&2)
+}
+
+
+quietYarn
+quietYarn link
 
 cd $target
 
+echo "Running tests for $target"
+
 config_path=".eslintrc.js"
 
-yarn
-yarn link $name
+quietYarn
+quietYarn link $name
 
-yarn list eslint
-yarn list prettier
+quietYarn list eslint
+quietYarn list prettier
+quietYarn bin eslint
+quietYarn bin prettier
 
 # ls -la node_modules/$name
 
-yarn eslint \
+echo "$(pwd)"
+node_modules/.bin/eslint . \
   --no-ignore \
   --no-eslintrc \
   --config $config_path \
   --fix \
-  --ext js,ts \
-  .
+  --ext js,ts
 
 git diff --exit-code ./
