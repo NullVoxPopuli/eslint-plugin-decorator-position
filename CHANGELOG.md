@@ -1,3 +1,17 @@
+# [3.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.29...v3.0.0) (2021-09-28)
+
+
+### chore
+
+* drop support fore node 10 ([5130cc1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/5130cc127da3b27eb028ace01032b792668916ad))
+
+
+### BREAKING CHANGES
+
+* node < 12 is no longer supported.
+
+Added node 14 and 16 to the test matrix
+
 ## [2.2.29](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.28...v2.2.29) (2021-07-20)
 
 
