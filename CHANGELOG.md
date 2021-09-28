@@ -1,3 +1,18 @@
+# [4.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v3.0.1...v4.0.0) (2021-09-28)
+
+
+### chore
+
+* **ci:** add eslint to ci ([0cbbf6e](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/0cbbf6effa764dca011ba6ccb1b33e8dabd128fb))
+
+
+### BREAKING CHANGES
+
+* **ci:** drop support for eslint@5
+
+this technically isn't a breaking change, as eslint@5 likely never
+worked. But now CI is testing supported versions of eslint.
+
 ## [3.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v3.0.0...v3.0.1) (2021-09-28)
 
 
