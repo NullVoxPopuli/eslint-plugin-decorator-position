@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v3.0.0...v3.0.1) (2021-09-28)
+
+
+### Bug Fixes
+
+* **readme:** update readme to reflect new node support policy ([84ab1f1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/84ab1f1d38f64fe856e12765a1a82fe1f53f6739))
+
 # [3.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v2.2.29...v3.0.0) (2021-09-28)
 
 
