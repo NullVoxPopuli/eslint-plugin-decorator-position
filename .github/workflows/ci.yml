@@ -23,15 +23,26 @@ jobs:
         - "12"
         - "14"
         - "16"
+        eslint:
+        - "eslint@7"
+        - "eslint@6"
     steps:
     - uses: actions/checkout@v2
     - uses: volta-cli/action@v1
       with:
         node-version: ${{ matrix.node }}
-    - run: yarn install
+    - run: |
+        yarn install
+        yarn remove eslint
+        yarn add ${{ matrix.eslint }}
 
     - name: Test with ${{ matrix.node }}
       run: |
+        echo "Matrix Info"
+        echo "Intended: ${{ matrix.node }}, ${{ matrix.eslint }}"
+        echo "node: $(node -v)"
+        echo "yarn why eslint"
+        yarn why eslint
         yarn test:coverage --runInBand
         yarn update && git diff --exit-code README.md docs/
 
