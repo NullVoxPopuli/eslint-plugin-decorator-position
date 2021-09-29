@@ -32,6 +32,14 @@ ruleTester.run('JS: decorator-position', rule, {
       }`,
     stripIndent`
       class Foo {
+        @foo.test.withCall() foo1 = 1;
+      }`,
+    stripIndent`
+      class Foo {
+        @foo.test foo1 = 1;
+      }`,
+    stripIndent`
+      class Foo {
         @foo
         get foo2() {
           return '';
