@@ -13,4 +13,5 @@ coverage
 npm-debug.log
 *.swp
 .vscode
+.idea
 *.tgz

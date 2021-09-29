@@ -35,6 +35,22 @@ tsRuleTester.run('TS: decorator-position', rule, {
     },
     {
       code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service.test.withCall() locale!: LocaleService;
+        }
+      `,
+      options: [{ overrides: { 'prefer-inline': ['@service'] } }],
+    },
+    {
+      code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service.test locale!: LocaleService;
+        }
+      `,
+      options: [{ overrides: { 'prefer-inline': ['@service'] } }],
+    },
+    {
+      code: stripIndent`
         export default class Foo {
           // Would be 113 characters inline
           @service('addon-name/-private/do-not-use/the-name-of-the-service')
