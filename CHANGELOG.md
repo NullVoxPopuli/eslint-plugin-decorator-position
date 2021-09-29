@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v4.0.0...v4.0.1) (2021-09-29)
+
+
+### Bug Fixes
+
+* **#421:** fix issue [#421](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/421) - crash when getting name of MemberExpression ([777d047](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/777d047e26f8a5ced9cad254267955985d3e2526))
+
 # [4.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v3.0.1...v4.0.0) (2021-09-28)
 
 
