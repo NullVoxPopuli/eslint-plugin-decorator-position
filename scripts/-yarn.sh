@@ -7,7 +7,11 @@ function testWithYarn() {
 
   name="eslint-plugin-decorator-position"
 
+  set +e
+  echo "We have to install deps in the plugin with yarn because yarn is bad at dependency resolution"
+  quietYarn
   quietYarn unlink
+  set -e
   quietYarn link
 
   cd $target

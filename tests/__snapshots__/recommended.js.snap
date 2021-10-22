@@ -1,4 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
+
+exports[`recommended rules > has the right list 1`] = `
+[
+  "decorator-position",
+]
+`;
 
 exports[`recommended rules has the right list 1`] = `
 Array [

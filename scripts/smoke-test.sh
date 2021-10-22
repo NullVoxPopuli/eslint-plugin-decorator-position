@@ -70,8 +70,8 @@ function quietYarn() {
 # Install deps for plugin
 plugin_path=$PWD
 echo "Ensuring the plugin's deps are installed"
-# quietPnpm install --prod
-quietYarn install
+quietPnpm install --prod
+# quietYarn install
 
 set +e
 packageManager=$(cat "$PWD/$target/package.json" | grep "packageManager")
@@ -81,10 +81,10 @@ __dirname="$(dirname "${BASH_SOURCE[0]}")"
 source "$__dirname/-pnpm.sh"
 source "$__dirname/-yarn.sh"
 
-echo "Detected Package Manager: '$packageManager' (will default to yarn if missing)"
+echo "Detected Package Manager: '$packageManager' (will default to pnpm if missing)"
 
-if [[ "$packageManager" == *"pnpm"* ]]; then
-  testWithPnpm $plugin_path $target
-else
+if [[ "$packageManager" == *"yarn"* ]]; then
   testWithYarn $plugin_path $target
+else
+  testWithPnpm $plugin_path $target
 fi
