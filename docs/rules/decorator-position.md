@@ -4,7 +4,7 @@
 
 Decorators always have two syntactically valid positions that they may be placed
 in relation to the thing they decorate. For many projects utilizing decorators,
-they are usually more than one type of decorator used -- which implies different semantics
+there is usually more than one type of decorator being used -- which implies different semantics
 and different positions of the decorator may make more sense depending on context, and usage.
 
 ## Rule Details
@@ -47,7 +47,7 @@ class Foo {
   * `printWidth` -- number -- sets the maximum line length allowed for inlining the decorator and the thing it decorates
   * `properties` -- either `'prefer-inline'` or `'above'` -- default: `'prefer-inline'`
   * `methods` -- either `'prefer-inline'` or `'above'` -- default: `'above'`
-  * `overrides -- object -- allowing specific behavior for individual decorators
+  * `overrides` -- object -- allowing specific behavior for individual decorators
     * `prefer-inline` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on the same line as the thing it decorates.
     * `above` -- array of decorators or decorator configs. Each entry here specifies that the decorator will be on a different line as the thing it decorates.
 
