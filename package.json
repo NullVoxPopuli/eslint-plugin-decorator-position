@@ -58,8 +58,8 @@
   },
   "homepage": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position#readme",
   "devDependencies": {
-    "@commitlint/cli": "14.1.0",
-    "@commitlint/config-conventional": "14.1.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.1",
     "@typescript-eslint/parser": "4.33.0",
