@@ -46,6 +46,20 @@ jobs:
     - run: yarn install
     - run: yarn lint:docs-js
 
+  tooling:
+    name: Tooling
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+      - run: yarn install
+      - name: Semantic Release
+        run: yarn semantic-release --dry-run
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   commits:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Commit Messages
