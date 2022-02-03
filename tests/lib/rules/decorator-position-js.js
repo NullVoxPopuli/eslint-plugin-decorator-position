@@ -205,6 +205,31 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
+          @foo
+          one() {}
+
+          @foo two() {
+            return 2;
+          }
+        }
+      `,
+      options: [{ methods: 'above', properties: 'prefer-inline' }],
+      errors: [{ message: 'Expected @foo to be on the line above' }],
+      output: stripIndent`
+        class Foo {
+          @foo
+          one() {}
+
+          @foo
+          two() {
+            return 2;
+          }
+        }
+      `,
+    },
+    {
+      code: stripIndent`
+        class Foo {
           @alias('foo.bar.baz.someReallyLongPropertyNameThatIsTooLongToBeInlineOrItBreaksPrettier') foo;
         }
       `,
