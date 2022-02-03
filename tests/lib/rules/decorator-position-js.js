@@ -67,6 +67,18 @@ ruleTester.run('JS: decorator-position', rule, {
     {
       code: stripIndent`
         class Foo {
+          @foo one() {}
+
+          @foo two() {
+            return 2;
+          }
+        }
+      `,
+      options: [{ overrides: { 'prefer-inline': ['@foo'] } }],
+    },
+    {
+      code: stripIndent`
+        class Foo {
           @foo
           foo;
 
