@@ -62,7 +62,7 @@ Rules are grouped by category to help you understand their purpose. Each rule ha
 
 |    | Rule ID | Description |
 |:---|:--------|:------------|
-| :white_check_mark::wrench: | [decorator-position](./docs/rules/decorator-position.md) | Enforces consistent decorator position on properties and methods |
+| :white_check_mark::wrench: | [decorator-position](./docs/rules/decorator-position.md) | enforce consistent decorator position on properties and methods |
 
 <!--RULES_TABLE_END-->
 
