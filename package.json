@@ -50,7 +50,7 @@
     ]
   },
   "engines": {
-    "node": ">=8.3"
+    "node": ">=14"
   },
   "license": "MIT",
   "bugs": {
