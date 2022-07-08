@@ -83,5 +83,20 @@ tsRuleTester.run('TS: decorator-position', rule, {
         }
       `,
     },
+    {
+      code: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service
+          locale(): LocaleService {}
+        }
+      `,
+      options: [{ overrides: { 'prefer-inline': ['@service'] } }],
+      errors: [{ message: 'Expected @service to be inline.' }],
+      output: stripIndent`
+        export default class LocaleSwitcher extends Component<IArgs> {
+          @service locale(): LocaleService {}
+        }
+      `,
+    },
   ],
 });

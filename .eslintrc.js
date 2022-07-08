@@ -105,9 +105,9 @@ module.exports = {
 
     // Optional jest rules:
     'jest/consistent-test-it': 'error',
-    'jest/lowercase-name': 'error',
+    'jest/prefer-lowercase-title': 'error',
     'jest/no-duplicate-hooks': 'error',
-    'jest/no-expect-resolves': 'error',
+    'jest/prefer-expect-resolves': 'error',
     'jest/no-hooks': 'error',
     'jest/no-if': 'error',
     'jest/no-large-snapshots': 'error',
@@ -155,7 +155,7 @@ module.exports = {
       // Markdown code samples in documentation:
       files: ['**/*.md'],
       plugins: ['markdown'],
-      parser: 'babel-eslint',
+      parser: 'markdown-eslint-parser',
       parserOptions: {
         sourceType: 'module',
         ecmaFeatures: { legacyDecorators: true },
