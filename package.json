@@ -64,7 +64,7 @@
     "@semantic-release/git": "10.0.1",
     "@typescript-eslint/parser": "5.30.5",
     "common-tags": "1.8.2",
-    "eslint": "8.19.0",
+    "eslint": "8",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-eslint-comments": "3.2.0",
     "eslint-plugin-eslint-plugin": "4.4.0",
@@ -92,7 +92,7 @@
     "snake-case": "^3.0.3"
   },
   "peerDependencies": {
-    "eslint": "^8.0.0"
+    "eslint": "^7 || ^8"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
