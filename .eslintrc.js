@@ -3,7 +3,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 2021,
     sourceType: 'script',
   },
   plugins: ['eslint-plugin', 'filenames', 'import', 'jest', 'node', 'prettier'],
