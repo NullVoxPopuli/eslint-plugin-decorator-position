@@ -9,7 +9,7 @@
     "@typescript-eslint/parser": "*",
     "babel-eslint": "*",
     "eslint-plugin-decorator-position": "*",
-    "eslint": "*",
+    "eslint": "^7.0.0",
     "eslint-plugin-prettier": "*",
     "eslint-config-prettier": "*"
   }

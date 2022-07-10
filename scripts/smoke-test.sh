@@ -54,37 +54,37 @@ fi
 
 name="eslint-plugin-decorator-position"
 
+function quietPnpm() {
+  echo "pnpm $@"
+  pnpm $@ 2> >(grep -v warning 1>&2)
+}
+
 function quietYarn() {
   echo "yarn $@"
   yarn $@ --no-progress --non-interactive --emoji --silent 2> >(grep -v warning 1>&2)
 }
 
 
-quietYarn
-quietYarn link
 
-cd $target
 
-echo "Running tests for $target"
+# Install deps for plugin
+plugin_path=$PWD
+echo "Ensuring the plugin's deps are installed"
+# quietPnpm install --prod
+quietYarn install
 
-config_path=".eslintrc.js"
+set +e
+packageManager=$(cat "$PWD/$target/package.json" | grep "packageManager")
+set -e
 
-quietYarn
-quietYarn link $name
+__dirname="$(dirname "${BASH_SOURCE[0]}")"
+source "$__dirname/-pnpm.sh"
+source "$__dirname/-yarn.sh"
 
-quietYarn list eslint
-quietYarn list prettier
-quietYarn bin eslint
-quietYarn bin prettier
+echo "Detected Package Manager: '$packageManager' (will default to yarn if missing)"
 
-# ls -la node_modules/$name
-
-echo "$(pwd)"
-node_modules/.bin/eslint . \
-  --no-ignore \
-  --no-eslintrc \
-  --config $config_path \
-  --fix \
-  --ext js,ts
-
-git diff --exit-code ./
+if [[ "$packageManager" == *"pnpm"* ]]; then
+  testWithPnpm $plugin_path $target
+else
+  testWithYarn $plugin_path $target
+fi

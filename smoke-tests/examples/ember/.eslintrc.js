@@ -1,3 +1,8 @@
 'use strict';
 
-module.exports = require('eslint-plugin-decorator-position/lib/config/ember');
+module.exports = {
+  plugins: ['decorator-position'],
+  extends: [
+    'plugin:decorator-position/ember'
+  ],
+}

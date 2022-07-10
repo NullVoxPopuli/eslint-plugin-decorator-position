@@ -1,6 +1,9 @@
 module.exports = {
-  extends: [require.resolve('../../../lib/config/base.js'), 'plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  extends: [
+    'plugin:decorator-position/base',
+    'plugin:prettier/recommended'
+  ],
+  plugins: ['prettier', 'decorator-position'],
   rules: {
     'decorator-position/decorator-position': ['error'],
     'prettier/prettier': [
