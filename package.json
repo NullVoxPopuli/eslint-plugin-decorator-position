@@ -93,7 +93,7 @@
     "snake-case": "^3.0.3"
   },
   "peerDependencies": {
-    "eslint": "^7 || ^8"
+    "eslint": "^6 || ^7 || ^8"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
