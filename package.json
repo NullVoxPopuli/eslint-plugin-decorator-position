@@ -24,8 +24,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll",
     "update": "node ./scripts/update-rules.js",
-    "semantic-release": "semantic-release",
-    "postinstall": "node ./scripts/postinstall.js"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
