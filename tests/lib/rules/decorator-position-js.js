@@ -2,10 +2,10 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const parser = require.resolve('babel-eslint');
+const parser = require.resolve('@babel/eslint-parser');
 
 const { stripIndent } = require('common-tags');
-const RuleTester = require('eslint').RuleTester;
+const { RuleTester } = require('eslint');
 
 const rule = require('../../../lib/rules/decorator-position');
 // const { ERROR_MESSAGE } = rule;

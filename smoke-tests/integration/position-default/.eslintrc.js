@@ -1,5 +1,8 @@
 module.exports = {
-  extends: require.resolve('../../../lib/config/base.js'),
+  plugins: ['decorator-position'],
+  extends: [
+    'plugin:decorator-position/base'
+  ],
   rules: {
     'decorator-position/decorator-position': ['error'],
   },

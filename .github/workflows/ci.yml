@@ -20,10 +20,10 @@ jobs:
     strategy:
       matrix:
         node:
-        - "12"
         - "14"
         - "16"
         eslint:
+        - "eslint@8"
         - "eslint@7"
         - "eslint@6"
     steps:

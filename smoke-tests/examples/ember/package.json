@@ -4,8 +4,20 @@
   "description": "smoke-test",
   "license": "MIT",
   "private": true,
+  "type": "commonjs",
   "dependencies": {
+    "babel-eslint": "10.0.3",
     "eslint-plugin-decorator-position": "*",
-    "eslint": "*"
+    "eslint": "^7.0.0"
+  },
+  "resolutions": {
+    "eslint-scope": "^5.0.0",
+    "eslint": "^7.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint-scope": "^5.0.0",
+      "eslint": "^7.0.0"
+    }
   }
 }
