@@ -1,3 +1,36 @@
+# [5.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v4.0.1...v5.0.0) (2022-07-15)
+
+
+### Features
+
+* support eslint@8 ([4193fac](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/4193fac3060e098726d4e3a48ba362eae0baecff))
+* **upgrade:** adding eslint v7 ci testing ([fef593c](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/fef593c3f812fc19483a25b384744316f03f9008))
+* **upgrade:** adding exports of private eslint api on first rule run ([c8186e3](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/c8186e3d6522cfe1e8149da8162dfb3220b9ee27))
+* **upgrade:** adding exports of private eslint api on first rule run ([582543e](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/582543ed3e2006c81e31054ab24a4f5ac175eac9))
+* **upgrade:** adding postinstall script to exports private eslint api ([7ad2761](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/7ad27611461f6c4cf5fe1b1b747a6f7575d6e18f))
+* **upgrade:** adding support for eslint v6 ([d549fe1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/d549fe14e5c7ff92354374e45f644dad047de7be))
+* **upgrade:** adding support for eslint v7 ([afdc876](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/afdc87622de9637296714e165c1f63e5fb39efbc))
+* **upgrade:** drop automatic detection of printWidth ([deb4c07](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/deb4c079ee33b3fb1fb597f1e4f94b83f610d35b))
+* **upgrade:** eslint@8 ([e00f402](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/e00f4029ac578c52da1cbc8e01acec59f986319a))
+* **upgrade:** fix ci ([6f382ca](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/6f382ca9cce31f819470d7a40142ca69870cf725))
+* **upgrade:** fix lint ([882599d](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/882599dfcd9ed1b0eca6e5f655aded5102f4d4ba))
+* **upgrade:** fix lint ([49603f9](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/49603f9b7a7a0a30aa40c7f8be762962d2b67079))
+* **upgrade:** fix smoke tests ([359dec5](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/359dec578adb2065a1ea603f760c23043467db73))
+* **upgrade:** fix smoke tests ([1648e88](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/1648e88ee4bb1c2cc794552e6bad20309e8eb115))
+* **upgrade:** rolling back formatting and package version ([01b0087](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/01b0087862a368ff85e3a714eb3e8057584d3f66))
+* **upgrade:** upgrade readme ([9452f5e](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/9452f5ed35acbe5eef9df5597a508e1804acf663))
+
+
+### BREAKING CHANGES
+
+*  - node 12 is no longer supported, support for node 18 was added.
+ - eslint8 will not support the prettier/prettier rule.
+    reading the config from prettier/prettier is not
+    supported by eslint.
+    It's possible it could maybe be added later through
+    hacks (currently in place) / private api usage,
+    but eslint8 does not give access to the config for a file.
+
 ## [4.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v4.0.0...v4.0.1) (2021-09-29)
 
 
