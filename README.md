@@ -45,7 +45,7 @@ module.exports = {
 ### 3. Using with Prettier
 
 Since eslint 8, the printWidth option must be specified to be compatible
-with prettier
+with the eslint-plugin-prettier rule `prettier/prettier`
 
 ```javascript
 // .eslintrc.js
@@ -56,10 +56,13 @@ module.exports = {
     'plugin:decorator-position/ember' // or other configuration
   ],
   rules: {
-    'decorator-position/decorator-position': ['error', { printWidth: 100 }]
+    'decorator-position/decorator-position': ['error', { printWidth: 100 }],
+    'prettier/prettier': ['error', { printWidth: 100 }]
   }
 };
 ```
+
+If there is a `.prettierrc.js` file, that will be read instead, and `printwidth` is not needed.
 
 ## 🧰 Configurations
 
