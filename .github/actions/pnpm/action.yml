@@ -11,7 +11,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-pnpm-
 
-    - uses: pnpm/action-setup@v2.0.1
+    - uses: pnpm/action-setup@v2.2.2
       with:
         version: 7.1.2
     - name: Install Dependencies
