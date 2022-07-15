@@ -29,7 +29,7 @@ npm install --save-dev eslint-plugin-decorator-position
 ```javascript
 // .eslintrc.js
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   // parser: '@typescript-eslint/parser',
   plugins: ['decorator-position'],
   extends: [
@@ -41,6 +41,28 @@ module.exports = {
   }
 };
 ```
+
+### 3. Using with Prettier
+
+Since eslint 8, the printWidth option must be specified to be compatible
+with the eslint-plugin-prettier rule `prettier/prettier`
+
+```javascript
+// .eslintrc.js
+module.exports = {
+  parser: '@babel/eslint-parser',
+  plugins: ['decorator-position'],
+  extends: [
+    'plugin:decorator-position/ember' // or other configuration
+  ],
+  rules: {
+    'decorator-position/decorator-position': ['error', { printWidth: 100 }],
+    'prettier/prettier': ['error', { printWidth: 100 }]
+  }
+};
+```
+
+If there is a `.prettierrc.js` file, that will be read instead, and `printwidth` is not needed.
 
 ## 🧰 Configurations
 

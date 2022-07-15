@@ -13,72 +13,151 @@ env:
   CI: true
 
 jobs:
+  install_dependencies:
+    name: Install Dependencies
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+
+#############################################################
+
+  lint:
+    name: Lint JS
+    runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+      - run: pnpm lint:js
+
+  lint_tooling:
+    name: Lint Tooling
+    runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+
+      - name: Semantic Release
+        run: pnpm semantic-release --dry-run
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint_docs:
+    name: Lint Docs
+    runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+      - run: pnpm lint:docs
+
+  lint_commits:
+    name: Lint Commit Messages
+    runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: volta-cli/action@v1
+      - uses: wagoid/commitlint-github-action@v4.1.9
+
+  lint_readme:
+    name: README up to date
+    runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+      - run: pnpm update && git diff --exit-code README.md docs/
+
+#############################################################
+
   tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Test
     runs-on: ubuntu-latest
+    needs: ['install_dependencies']
     strategy:
+      fail-fast: false
       matrix:
         node:
         - "14"
         - "16"
+        - "18"
         eslint:
         - "eslint@8"
         - "eslint@7"
         - "eslint@6"
     steps:
-    - uses: actions/checkout@v2
+    - uses: volta-cli/action@v1
+    - uses: actions/checkout@v3
     - uses: volta-cli/action@v1
       with:
         node-version: ${{ matrix.node }}
-    - run: |
-        yarn install
-        yarn remove eslint
-        yarn add ${{ matrix.eslint }}
+    - uses: ./.github/actions/pnpm
+    - name: "Use ${{ matrix.eslint }}"
+      run: |
+        pnpm remove eslint
+        pnpm add ${{ matrix.eslint }}
 
     - name: Test with ${{ matrix.node }}
       run: |
         echo "Matrix Info"
         echo "Intended: ${{ matrix.node }}, ${{ matrix.eslint }}"
         echo "node: $(node -v)"
-        echo "yarn why eslint"
-        yarn why eslint
-        yarn test:coverage --runInBand
-        yarn update && git diff --exit-code README.md docs/
+        echo "pnpm why eslint"
+        pnpm why eslint
+        pnpm test
 
   smoke-tests:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-    name: Smoke Tests
+    name: ${{ matrix.script }}
     runs-on: ubuntu-latest
+    needs: ['install_dependencies']
+    strategy:
+      fail-fast: false
+      matrix:
+        # tese are all relative to the smoke-tests directory
+        script:
+          - integration/position-default
+          - integration/position-prettier
+          - integration/external-config-prettier
+          - examples/ember
+          - examples/typescript
+          - issue-reproductions/147
+          - issue-reproductions/195
+          - issue-reproductions/196
+          - issue-reproductions/289
+          - issue-reproductions/313
+
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: volta-cli/action@v1
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
+      - run: ./scripts/smoke-test.sh smoke-tests/${{ matrix.script }}
 
-    # One line per configuration
-    - run: ./scripts/smoke-test.sh smoke-tests/integration/position-default
-    - run: ./scripts/smoke-test.sh smoke-tests/integration/position-prettier
-    - run: ./scripts/smoke-test.sh smoke-tests/integration/external-config-prettier
-    - run: ./scripts/smoke-test.sh smoke-tests/examples/ember
-    - run: ./scripts/smoke-test.sh smoke-tests/examples/typescript
-    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/147
-    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/195
-    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/196
-    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/289
-    - run: ./scripts/smoke-test.sh smoke-tests/issue-reproductions/313
+  publish:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: [tests]
 
-  # publish:
-  #   name: Release
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/master'
-  #   needs: [tests]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v1
+      - uses: ./.github/actions/pnpm
 
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: volta-cli/action@v1
-  #     - run: yarn install
-
-  #     - name: Release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       run: yarn semantic-release
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm semantic-release

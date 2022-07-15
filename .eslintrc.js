@@ -2,17 +2,22 @@
 
 module.exports = {
   root: true,
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2022,
     sourceType: 'script',
+    ecmaFeatures: {
+      legacyDecorators: true,
+    },
+    babelOptions: {
+      configFile: './babel.config.cjs',
+    },
   },
-  plugins: ['eslint-plugin', 'filenames', 'import', 'jest', 'node', 'prettier'],
+  plugins: ['eslint-plugin', 'filenames', 'import', 'node', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
     'plugin:eslint-plugin/all',
-    'plugin:jest/recommended',
-    'plugin:jest/style',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:node/recommended',
@@ -21,7 +26,6 @@ module.exports = {
   env: {
     es6: true,
     node: true,
-    jest: true,
   },
   rules: {
     // Optional eslint rules:
@@ -103,24 +107,6 @@ module.exports = {
     // Filenames:
     'filenames/match-regex': ['error', '^.?[a-z0-9-]+$'], // Kebab-case.
 
-    // Optional jest rules:
-    'jest/consistent-test-it': 'error',
-    'jest/prefer-lowercase-title': 'error',
-    'jest/no-duplicate-hooks': 'error',
-    'jest/prefer-expect-resolves': 'error',
-    'jest/no-hooks': 'error',
-    'jest/no-if': 'error',
-    'jest/no-large-snapshots': 'error',
-    'jest/no-test-return-statement': 'error',
-    'jest/prefer-called-with': 'error',
-    'jest/prefer-hooks-on-top': 'error',
-    'jest/prefer-spy-on': 'error',
-    'jest/prefer-strict-equal': 'error',
-    'jest/prefer-todo': 'error',
-    'jest/require-top-level-describe': 'error',
-    'jest/require-to-throw-message': 'error',
-    'jest/valid-title': 'error',
-
     // Optional import rules:
     'import/extensions': 'error',
     'import/first': 'error',
@@ -140,11 +126,6 @@ module.exports = {
   },
   overrides: [
     {
-      // Test files:
-      files: ['tests/**/*.js'],
-      env: { jest: true },
-    },
-    {
       // Config files:
       files: ['commitlint.config.js'],
       rules: {
@@ -153,9 +134,9 @@ module.exports = {
     },
     {
       // Markdown code samples in documentation:
-      files: ['**/*.md'],
+      files: ['**/*.md----TEMP-DISABLED'],
       plugins: ['markdown'],
-      parser: 'markdown-eslint-parser',
+      parser: 'markdown-eslint-eslint',
       parserOptions: {
         sourceType: 'module',
         ecmaFeatures: { legacyDecorators: true },
@@ -165,9 +146,6 @@ module.exports = {
         'filenames/match-regex': 'off',
         'import/no-unresolved': 'off',
         'import/unambiguous': 'off',
-        'jest/expect-expect': 'off',
-        'jest/no-test-callback': 'off',
-        'jest/require-top-level-describe': 'off',
         'no-console': 'off',
         'no-undef': 'off',
         'no-unused-expressions': 'off',

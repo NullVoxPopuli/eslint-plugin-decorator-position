@@ -9,6 +9,7 @@
     "eslint-plugin-decorator-position": "*",
     "eslint": "^7.0.0",
     "eslint-plugin-prettier": "*",
-    "eslint-config-prettier": "*"
+    "eslint-config-prettier": "*",
+    "prettier": "^2.6.2"
   }
 }

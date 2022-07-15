@@ -1,3 +1,5 @@
+/* globals describe, it, expect */
+
 'use strict';
 
 const plugin = require('../lib');

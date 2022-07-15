@@ -1,4 +1,6 @@
 'use strict';
+/* globals describe, it, expect */
+// const { it, describe, expect } = require('vitest');
 
 const { readdirSync, readFileSync } = require('fs');
 const { join } = require('path');
@@ -11,7 +13,6 @@ describe('rules setup is correct', function () {
     const path = join(__dirname, '..', 'lib', 'rules');
     const files = readdirSync(path);
 
-    // eslint-disable-next-line jest/prefer-strict-equal
     expect(RULE_NAMES).toEqual(
       files.filter((file) => !file.startsWith('.')).map((file) => file.replace('.js', ''))
     );
@@ -42,7 +43,6 @@ describe('rules setup is correct', function () {
     const path = join(__dirname, '..', 'docs', 'rules');
     const files = readdirSync(path);
 
-    // eslint-disable-next-line jest/prefer-strict-equal
     expect(RULE_NAMES).toEqual(
       files
         .filter((file) => !file.startsWith('.') && file !== '_TEMPLATE_.md')
@@ -62,11 +62,9 @@ describe('rules setup is correct', function () {
       expect(file).toContain(`# ${ruleName}`); // Title header.
       expect(file).toContain('## Examples'); // Examples section header.
 
-      if (rule.meta.fixable === 'code') {
-        // eslint-disable-next-line jest/no-conditional-expect
+      if (['code', 'whitespace'].includes(rule.meta.fixable)) {
         expect(file).toContain(FIXABLE_MSG);
       } else {
-        // eslint-disable-next-line jest/no-conditional-expect
         expect(file).not.toContain(FIXABLE_MSG);
       }
     });
