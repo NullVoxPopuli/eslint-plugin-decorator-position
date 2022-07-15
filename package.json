@@ -8,7 +8,8 @@
     "./lib/rules/decorator-position": "./lib/rules/decorator-position.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "babel.config.cjs"
   ],
   "directories": {
     "rules": "rules",
