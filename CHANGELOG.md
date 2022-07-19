@@ -1,3 +1,12 @@
+## [5.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v5.0.0...v5.0.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* bug where decorators would not correctly be placed on a separate line for methods ([4bbcc36](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/4bbcc36af650757a7200ba8a4c79ed3ccb47c52d))
+* **ci:** tell ci that the default branch name is now 'main' ([d058726](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/d058726c8ba2b1829c5e96b4a9cdb36057af85e8))
+* **package:** include babel config during publishing  ([a059a47](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/a059a47a5ac77622507359eed7baac52773e18bc)), closes [/github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/493#issuecomment-1185321587](https://github.com//github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues/493/issues/issuecomment-1185321587)
+
 # [5.0.0](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v4.0.1...v5.0.0) (2022-07-15)
 
 
