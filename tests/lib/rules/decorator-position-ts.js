@@ -25,6 +25,13 @@ tsRuleTester.run('TS: decorator-position', rule, {
             .join(" ");
         }
       `,
+    stripIndent`
+      export class MyComponent {
+        @Stater classes = ["toggle", this.checkedClass(), this.disabledClass()]
+          .filter(Boolean)
+          .join(" ");
+      }
+    `,
     {
       code: stripIndent`
         export default class LocaleSwitcher extends Component<IArgs> {
