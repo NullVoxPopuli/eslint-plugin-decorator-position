@@ -214,7 +214,7 @@ ruleTester.run('JS: decorator-position', rule, {
         }
       `,
       options: [{ methods: 'above', properties: 'prefer-inline' }],
-      errors: [{ message: 'Expected @foo to be on the line above' }],
+      errors: [{ message: 'Expected @foo to be on the line above.' }],
       output: stripIndent`
         class Foo {
           @foo
