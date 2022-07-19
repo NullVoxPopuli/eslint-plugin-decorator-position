@@ -196,6 +196,32 @@ describe(`JavaScript (using ${using})`, () => {
         // print width is one less than the decorator would be on one line
         options: [{ printWidth: 31 }],
       },
+      {
+        code: stripIndent`
+          class Foo {
+            @foo one() {}
+
+            @foo two() {
+              return 2;
+            }
+          }
+        `,
+        options: [{ overrides: { 'prefer-inline': ['@foo'] } }],
+      },
+      {
+        code: stripIndent`
+          class Foo {
+            @foo
+            one() {}
+
+            @foo
+            two() {
+              return 2;
+            }
+          }
+        `,
+        options: [{ methods: 'above', properties: 'prefer-inline' }],
+      },
     ],
     invalid: [
       {
@@ -361,6 +387,31 @@ describe(`JavaScript (using ${using})`, () => {
           @foo foo3() {}
         }
       `,
+      },
+      {
+        code: stripIndent`
+        class Foo {
+          @foo
+          one() {}
+
+          @foo two() {
+            return 2;
+          }
+        }
+        `,
+        options: [{ methods: 'above', properties: 'prefer-inline' }],
+        errors: [{ message: 'Expected @foo to be on the line above.' }],
+        output: stripIndent`
+          class Foo {
+            @foo
+            one() {}
+
+            @foo
+            two() {
+              return 2;
+            }
+          }
+        `,
       },
     ],
   });
