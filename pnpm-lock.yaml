@@ -31,7 +31,7 @@ specifiers:
   semantic-release: 19.0.3
   snake-case: ^3.0.4
   typescript: 4.7.4
-  vitest: 0.19.1
+  vitest: 0.20.2
 
 dependencies:
   '@babel/core': 7.18.6
@@ -66,7 +66,7 @@ devDependencies:
   prettier: 2.7.1
   semantic-release: 19.0.3
   typescript: 4.7.4
-  vitest: 0.19.1_ycodqpvpzkgnjo6utro3hjgxcy
+  vitest: 0.20.2_ycodqpvpzkgnjo6utro3hjgxcy
 
 packages:
 
@@ -5001,8 +5001,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.19.1_ycodqpvpzkgnjo6utro3hjgxcy:
-    resolution: {integrity: sha512-E/ZXpFMUahn731wzhMBNzWRp4mGgiZFT0xdHa32cbNO0CSaHpE9hTfteEU247Gi2Dula8uXo5vvrNB6dtszmQA==}
+  /vitest/0.20.2_ycodqpvpzkgnjo6utro3hjgxcy:
+    resolution: {integrity: sha512-AFXTHrwG4d2OO6SAL8WP5ZkOwLtgeF4tlrHfXFqrHc+5chNegeR53pge0lv/C4316SqJ2DbYaUBH8vh3CdF+BQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
