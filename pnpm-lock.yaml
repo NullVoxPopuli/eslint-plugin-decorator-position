@@ -25,7 +25,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   lerna-changelog: 2.2.0
-  markdownlint-cli: 0.32.1
+  markdownlint-cli: 0.32.2
   npm-run-all: 4.1.5
   prettier: 2.7.1
   semantic-release: 19.0.3
@@ -61,7 +61,7 @@ devDependencies:
   eslint-plugin-node: 11.1.0_eslint@8.22.0
   eslint-plugin-prettier: 4.2.1_i2cojdczqdiurzgttlwdgf764e
   lerna-changelog: 2.2.0
-  markdownlint-cli: 0.32.1
+  markdownlint-cli: 0.32.2
   npm-run-all: 4.1.5
   prettier: 2.7.1
   semantic-release: 19.0.3
@@ -3342,8 +3342,8 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
-  /markdownlint-cli/0.32.1:
-    resolution: {integrity: sha512-hVLQ+72b5esQd7I+IqzBEB4x/4C+wJaxS2M6nqaGoDwrtNY6gydGf5CIUJtQcXtqsM615++a8TZPsvEtH6H4gw==}
+  /markdownlint-cli/0.32.2:
+    resolution: {integrity: sha512-xmJT1rGueUgT4yGNwk6D0oqQr90UJ7nMyakXtqjgswAkEhYYqjHew9RY8wDbOmh2R270IWjuKSeZzHDEGPAUkQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -3353,19 +3353,19 @@ packages:
       ignore: 5.2.0
       js-yaml: 4.1.0
       jsonc-parser: 3.1.0
-      markdownlint: 0.26.1
-      markdownlint-rule-helpers: 0.17.1
+      markdownlint: 0.26.2
+      markdownlint-rule-helpers: 0.17.2
       minimatch: 5.1.0
       run-con: 1.2.11
     dev: true
 
-  /markdownlint-rule-helpers/0.17.1:
-    resolution: {integrity: sha512-Djc5IjJt7VA5sZRisISsJC/rQXR7hr8JS9u6Q9/ce3mjPZdzw535cFGG0U6Mag+ldRTRmRwCcTfivOh57KUP4w==}
+  /markdownlint-rule-helpers/0.17.2:
+    resolution: {integrity: sha512-XaeoW2NYSlWxMCZM2B3H7YTG6nlaLfkEZWMBhr4hSPlq9MuY2sy83+Xr89jXOqZMZYjvi5nBCGoFh7hHoPKZmA==}
     engines: {node: '>=12'}
     dev: true
 
-  /markdownlint/0.26.1:
-    resolution: {integrity: sha512-8sLz1ktz5s4E0IDum2H9aiWLQU7RA5Eket9HUW5IRwfFnW2RD2ZyqYePW+z71tMc7lrFZc1+yPmlN9lirbJnlg==}
+  /markdownlint/0.26.2:
+    resolution: {integrity: sha512-2Am42YX2Ex5SQhRq35HxYWDfz1NLEOZWWN25nqd2h3AHRKsGRE+Qg1gt1++exW792eXTrR4jCNHfShfWk9Nz8w==}
     engines: {node: '>=14'}
     dependencies:
       markdown-it: 13.0.1
