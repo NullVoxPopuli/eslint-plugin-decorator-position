@@ -30,7 +30,7 @@ specifiers:
   prettier: 2.7.1
   semantic-release: 19.0.5
   snake-case: ^3.0.4
-  typescript: 4.8.2
+  typescript: 4.8.3
   vitest: 0.21.1
 
 dependencies:
@@ -47,7 +47,7 @@ devDependencies:
   '@eslint/eslintrc': 1.3.1
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
-  '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
+  '@typescript-eslint/parser': 5.36.2_itqs5654cmlnjraw6gjzqacppi
   '@vitest/ui': 0.23.1
   c8: 7.12.0
   common-tags: 1.8.2
@@ -65,7 +65,7 @@ devDependencies:
   npm-run-all: 4.1.5
   prettier: 2.7.1
   semantic-release: 19.0.5
-  typescript: 4.8.2
+  typescript: 4.8.3
   vitest: 0.21.1_o24xmvlkvwwkj6bzko5p2bd4ae
 
 packages:
@@ -437,11 +437,11 @@ packages:
       '@types/node': 14.18.26
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.0.0_sojisuq57pai4d4e47xjxa5i7a
+      cosmiconfig-typescript-loader: 4.0.0_nuryja7yy3ver5bowctoxk53t4
       lodash: 4.17.21
       resolve-from: 5.0.0
-      ts-node: 10.9.1_ys5ibmf2vqsgufkwyky27zwkd4
-      typescript: 4.8.2
+      ts-node: 10.9.1_xwfh4scogix3vdbcy4yenbcgby
+      typescript: 4.8.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -969,7 +969,7 @@ packages:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
-  /@typescript-eslint/parser/5.36.2_yqf6kl63nyoq5megxukfnom5rm:
+  /@typescript-eslint/parser/5.36.2_itqs5654cmlnjraw6gjzqacppi:
     resolution: {integrity: sha512-qS/Kb0yzy8sR0idFspI9Z6+t7mqk/oRjnAYfewG+VN73opAUvmYL3oPIMmgOX6CnQS6gmVIXGshlb5RY/R22pA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -981,10 +981,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 5.36.2
       '@typescript-eslint/types': 5.36.2
-      '@typescript-eslint/typescript-estree': 5.36.2_typescript@4.8.2
+      '@typescript-eslint/typescript-estree': 5.36.2_typescript@4.8.3
       debug: 4.3.4
       eslint: 8.23.0
-      typescript: 4.8.2
+      typescript: 4.8.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1002,7 +1002,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.36.2_typescript@4.8.2:
+  /@typescript-eslint/typescript-estree/5.36.2_typescript@4.8.3:
     resolution: {integrity: sha512-8fyH+RfbKc0mTspfuEjlfqA4YywcwQK2Amcf6TDOwaRLg7Vwdu4bZzyvBZp4bjt1RRjQ5MDnOZahxMrt2l5v9w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1017,8 +1017,8 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.7
-      tsutils: 3.21.0_typescript@4.8.2
-      typescript: 4.8.2
+      tsutils: 3.21.0_typescript@4.8.3
+      typescript: 4.8.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1516,7 +1516,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/4.0.0_sojisuq57pai4d4e47xjxa5i7a:
+  /cosmiconfig-typescript-loader/4.0.0_nuryja7yy3ver5bowctoxk53t4:
     resolution: {integrity: sha512-cVpucSc2Tf+VPwCCR7SZzmQTQkPbkk4O01yXsYqXBIbjE1bhwqSyAgYQkRK1un4i0OPziTleqFhdkmOc4RQ/9g==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1527,8 +1527,8 @@ packages:
     dependencies:
       '@types/node': 14.18.26
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_ys5ibmf2vqsgufkwyky27zwkd4
-      typescript: 4.8.2
+      ts-node: 10.9.1_xwfh4scogix3vdbcy4yenbcgby
+      typescript: 4.8.3
     dev: true
 
   /cosmiconfig/7.0.1:
@@ -2063,7 +2063,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
+      '@typescript-eslint/parser': 5.36.2_itqs5654cmlnjraw6gjzqacppi
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
@@ -2126,7 +2126,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
+      '@typescript-eslint/parser': 5.36.2_itqs5654cmlnjraw6gjzqacppi
       array-includes: 3.1.5
       array.prototype.flat: 1.3.0
       debug: 2.6.9
@@ -4771,7 +4771,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.9.1_ys5ibmf2vqsgufkwyky27zwkd4:
+  /ts-node/10.9.1_xwfh4scogix3vdbcy4yenbcgby:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -4797,7 +4797,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.8.2
+      typescript: 4.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -4819,14 +4819,14 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: false
 
-  /tsutils/3.21.0_typescript@4.8.2:
+  /tsutils/3.21.0_typescript@4.8.3:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.8.2
+      typescript: 4.8.3
     dev: true
 
   /type-check/0.4.0:
@@ -4871,8 +4871,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /typescript/4.8.2:
-    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
+  /typescript/4.8.3:
+    resolution: {integrity: sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
