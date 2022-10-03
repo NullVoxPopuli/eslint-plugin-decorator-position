@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
 
 #############################################################
@@ -31,7 +31,7 @@ jobs:
     needs: ['install_dependencies']
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
       - run: pnpm lint:js
 
@@ -41,7 +41,7 @@ jobs:
     needs: ['install_dependencies']
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
 
       - name: Semantic Release
@@ -56,7 +56,7 @@ jobs:
     needs: ['install_dependencies']
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
       - run: pnpm lint:docs
 
@@ -68,7 +68,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: wagoid/commitlint-github-action@v5.0.2
 
   lint_readme:
@@ -77,7 +77,7 @@ jobs:
     needs: ['install_dependencies']
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
       - run: pnpm update && git diff --exit-code README.md docs/
 
@@ -99,9 +99,9 @@ jobs:
         - "eslint@7"
         - "eslint@6"
     steps:
-    - uses: volta-cli/action@v3
+    - uses: volta-cli/action@v4
     - uses: actions/checkout@v3
-    - uses: volta-cli/action@v3
+    - uses: volta-cli/action@v4
       with:
         node-version: ${{ matrix.node }}
     - uses: ./.github/actions/pnpm
@@ -142,7 +142,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
       - run: ./scripts/smoke-test.sh smoke-tests/${{ matrix.script }}
 
@@ -154,7 +154,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v3
+      - uses: volta-cli/action@v4
       - uses: ./.github/actions/pnpm
 
       - name: Release
