@@ -69,7 +69,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: volta-cli/action@v4
-      - uses: wagoid/commitlint-github-action@v5.1.2
+      - uses: wagoid/commitlint-github-action@v5.2.0
 
   lint_readme:
     name: README up to date
