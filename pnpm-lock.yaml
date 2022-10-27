@@ -11,7 +11,7 @@ specifiers:
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
   '@typescript-eslint/parser': 5.40.0
-  '@vitest/ui': 0.24.1
+  '@vitest/ui': 0.24.3
   c8: 7.12.0
   common-tags: 1.8.2
   ember-rfc176-data: ^0.3.17
@@ -48,7 +48,7 @@ devDependencies:
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.5
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@typescript-eslint/parser': 5.40.0_z4bbprzjrhnsfa24uvmcbu7f5q
-  '@vitest/ui': 0.24.1
+  '@vitest/ui': 0.24.3
   c8: 7.12.0
   common-tags: 1.8.2
   eslint: 8.25.0
@@ -66,7 +66,7 @@ devDependencies:
   prettier: 2.7.1
   semantic-release: 19.0.5
   typescript: 4.8.4
-  vitest: 0.24.3_@vitest+ui@0.24.1
+  vitest: 0.24.3_@vitest+ui@0.24.3
 
 packages:
 
@@ -1033,8 +1033,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitest/ui/0.24.1:
-    resolution: {integrity: sha512-7baeu1+XspO+eAOsygPNL1k8EQRpn7Mj8fhwgyzsTzoYAkqP62mOPO+sqa+TdVaE3241sbAniIzHD1mVMJp70A==}
+  /@vitest/ui/0.24.3:
+    resolution: {integrity: sha512-f5agYA/sdkiipq42TZayJoeUGjWx+opDjIVeNnb1SG2BNxqObFqh6GuJlzpGHerg4a2+ZSoVo4f4p2+dEyXPmg==}
     dependencies:
       sirv: 2.0.2
     dev: true
@@ -5014,7 +5014,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.24.3_@vitest+ui@0.24.1:
+  /vitest/0.24.3_@vitest+ui@0.24.3:
     resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -5039,7 +5039,7 @@ packages:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.0.4
-      '@vitest/ui': 0.24.1
+      '@vitest/ui': 0.24.3
       chai: 4.3.6
       debug: 4.3.4
       local-pkg: 0.4.2
