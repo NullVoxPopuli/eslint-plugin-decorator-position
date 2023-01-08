@@ -60,17 +60,6 @@ jobs:
       - uses: ./.github/actions/pnpm
       - run: pnpm lint:docs
 
-  lint_commits:
-    name: Lint Commit Messages
-    runs-on: ubuntu-latest
-    needs: ['install_dependencies']
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: volta-cli/action@v4
-      - uses: wagoid/commitlint-github-action@v5.2.0
-
   lint_readme:
     name: README up to date
     runs-on: ubuntu-latest
@@ -146,19 +135,28 @@ jobs:
       - uses: ./.github/actions/pnpm
       - run: ./scripts/smoke-test.sh smoke-tests/${{ matrix.script }}
 
-  publish:
+ # https://github.com/changesets/action
+  release:
     name: Release
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    needs: [tests]
+    needs:
+      - tests
 
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/pnpm
-
-      - name: Release
+      - uses: ./.github/actions/download-built-package
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages
+          # and calls changeset publish
+          publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm semantic-release
