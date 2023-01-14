@@ -13,7 +13,7 @@ runs:
 
     - uses: pnpm/action-setup@v2.2.3
       with:
-        version: 7.1.2
+        version: 7.25.0
     - name: Install Dependencies
       run: pnpm install
       shell: bash
