@@ -26,7 +26,7 @@ specifiers:
   lerna-changelog: 2.2.0
   markdownlint-cli: 0.33.0
   npm-run-all: 4.1.5
-  prettier: 2.7.1
+  prettier: 2.8.3
   snake-case: ^3.0.4
   typescript: 4.8.4
   vitest: 0.24.3
@@ -56,11 +56,11 @@ devDependencies:
   eslint-plugin-import: 2.27.4_d7sd2krenkbelnt3n7nqqoxduu
   eslint-plugin-markdown: 3.0.0_eslint@8.32.0
   eslint-plugin-node: 11.1.0_eslint@8.32.0
-  eslint-plugin-prettier: 4.2.1_bwiznj6mum4nx2xtr6b6ecukoq
+  eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
   lerna-changelog: 2.2.0
   markdownlint-cli: 0.33.0
   npm-run-all: 4.1.5
-  prettier: 2.7.1
+  prettier: 2.8.3
   typescript: 4.8.4
   vitest: 0.24.3_@vitest+ui@0.24.1
 
@@ -361,7 +361,7 @@ packages:
       fs-extra: 7.0.1
       lodash.startcase: 4.4.0
       outdent: 0.5.0
-      prettier: 2.7.1
+      prettier: 2.8.3
       resolve-from: 5.0.0
       semver: 5.7.1
     dev: true
@@ -548,7 +548,7 @@ packages:
       '@changesets/types': 5.2.1
       fs-extra: 7.0.1
       human-id: 1.0.2
-      prettier: 2.7.1
+      prettier: 2.8.3
     dev: true
 
   /@ember-data/rfc395-data/0.0.4:
@@ -1946,7 +1946,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_bwiznj6mum4nx2xtr6b6ecukoq:
+  /eslint-plugin-prettier/4.2.1_cn4lalcyadplruoxa5mhp7j3dq:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -1959,7 +1959,7 @@ packages:
     dependencies:
       eslint: 8.32.0
       eslint-config-prettier: 8.6.0_eslint@8.32.0
-      prettier: 2.7.1
+      prettier: 2.8.3
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -3631,8 +3631,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
