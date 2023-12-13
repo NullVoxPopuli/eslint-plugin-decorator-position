@@ -47,9 +47,9 @@
   },
   "homepage": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position#readme",
   "devDependencies": {
-    "@babel/core": "7.22.8",
-    "@babel/eslint-parser": "7.22.7",
-    "@babel/plugin-proposal-decorators": "7.22.7",
+    "@babel/core": "7.23.6",
+    "@babel/eslint-parser": "7.23.3",
+    "@babel/plugin-proposal-decorators": "7.23.6",
     "@changesets/changelog-github": "^0.4.7",
     "@changesets/cli": "^2.25.2",
     "@eslint/eslintrc": "2.1.0",
