@@ -1,23 +1,5 @@
 {
   "extends": [
-    "config:base",
-    ":semanticCommits"
-  ],
-  "ignorePaths": [
-    "tests",
-    "smoke-tests"
-  ],
-  "automerge": true,
-  "schedule": ["after 11pm on sunday"],  
-  "masterIssue": true,
-  "packageRules": [
-    {
-      "packageNames": ["eslint"],
-      "rangeStrategy": "bump"
-    },
-    {
-      "depTypeList": ["peerDependencies"],
-      "enabled": false
-    }
+    "github>NullVoxPopuli/renovate:npm.json5"
   ]
 }
