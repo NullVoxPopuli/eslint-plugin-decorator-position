@@ -4,7 +4,7 @@
   "description": "smoke-test",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@1.22.17",
+  "packageManager": "yarn@1.22.21",
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "eslint-plugin-decorator-position": "*",
