@@ -70,6 +70,7 @@ jobs:
         # pnpm 9 only supports node >= 18
         - { node: "18", pnpm: "9" }
         eslint:
+        - "eslint@9"
         - "eslint@8"
         - "eslint@7"
         - "eslint@6"
@@ -113,7 +114,7 @@ jobs:
           - issue-reproductions/196
           - issue-reproductions/289
           - issue-reproductions/313
-
+          - issue-reproductions/721
 
     steps:
       - uses: actions/checkout@v4
