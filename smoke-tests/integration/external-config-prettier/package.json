@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "integration-external-config-prettier",
   "version": "0.0.0",
   "description": "smoke-test",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "babel-eslint": "*",
-    "eslint-plugin-decorator-position": "*",
+    "eslint-plugin-decorator-position": "workspace:*",
     "eslint": "^7.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-config-prettier": "^4.0.0",

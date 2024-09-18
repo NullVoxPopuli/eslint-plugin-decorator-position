@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "issue-reproductions-195",
   "version": "0.0.0",
   "description": "smoke-test",
   "license": "MIT",
@@ -7,7 +7,7 @@
   "dependencies": {
     "@typescript-eslint/parser": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^3.0.0",
-    "eslint-plugin-decorator-position": "*",
+    "eslint-plugin-decorator-position": "workspace:*",
     "eslint": "^7.22.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-config-prettier": "^7.0.0",

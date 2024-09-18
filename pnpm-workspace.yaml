@@ -1,0 +1,3 @@
+packages:
+  - '.'
+  - './smoke-tests/*/*'

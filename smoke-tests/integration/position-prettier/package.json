@@ -1,12 +1,12 @@
 {
-  "name": "test",
+  "name": "integration-position-prettier",
   "version": "0.0.0",
   "description": "smoke-test",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "babel-eslint": "*",
-    "eslint-plugin-decorator-position": "*",
+    "eslint-plugin-decorator-position": "workspace:*",
     "eslint": "^7.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-config-prettier": "^4.0.0",
