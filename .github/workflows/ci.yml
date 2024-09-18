@@ -61,9 +61,12 @@ jobs:
       fail-fast: false
       matrix:
         node:
-        - "14"
-        - "16"
-        - "18"
+        # pnpm 9 does not support < Node 18
+        - { node: "14", pnpm: "8" }
+        # pnpm 9 does not support < Node 18
+        - { node: "16", pnpm: "8" }
+        # pnpm 9 only supports node >= 18
+        - { node: "18", pnpm: "9" }
         eslint:
         - "eslint@8"
         - "eslint@7"
@@ -72,17 +75,19 @@ jobs:
       - uses: actions/checkout@v4
       - uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ matrix.node.node }}
+          pnpm-version: ${{ matrix.node.pnpm }}
       - name: "Use ${{ matrix.eslint }}"
         run: |
           pnpm remove eslint
           pnpm add ${{ matrix.eslint }}
 
-      - name: Test with ${{ matrix.node }}
+      - name: Test with ${{ matrix.node.node }} & ${{ matrix.node.pnpm }}
         run: |
           echo "Matrix Info"
-          echo "Intended: ${{ matrix.node }}, ${{ matrix.eslint }}"
+          echo "Intended: node@${{ matrix.node.node }}, eslint@${{ matrix.eslint }}, pnpm@${{ matrix.node.pnpm }}"
           echo "node: $(node -v)"
+          echo "pnpm: $(pnpm --version)"
           echo "pnpm why eslint"
           pnpm why eslint
           pnpm test
