@@ -85,8 +85,10 @@ jobs:
         run: |
           pnpm remove eslint
           pnpm add ${{ matrix.eslint }}
+          rm pnpm-lock.yaml
+          pnpm install
 
-      - name: Test with ${{ matrix.node }} & ${{ matrix.pnpm }}
+      - name: Test with node@${{ matrix.node }} & pnpm@${{ matrix.pnpm }}
         run: |
           echo "Matrix Info"
           echo "Intended: node@${{ matrix.node }}, eslint@${{ matrix.eslint }}, pnpm@${{ matrix.pnpm }}"
