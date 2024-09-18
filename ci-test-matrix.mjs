@@ -1,12 +1,12 @@
 const eslints = [
-  6, 7, 8,
+  6, 8, 8,
   // 9
 ];
 const nodes = [
   14, 16, 18,
   // 20, 22
 ];
-const pnpms = [6, 7, 9];
+const pnpms = [6, 7, 8, 9];
 
 let raw = [];
 
@@ -29,6 +29,9 @@ raw = raw.filter((s) => !(s.pnpm === 9 && s.node < 18));
 raw = raw.filter((s) => !(s.pnpm === 8 && s.node < 16));
 // eslint 9 only works with 18+
 raw = raw.filter((s) => !(s.eslint === 9 && s.node < 18));
+// for pnpm 8, we only care about node 16
+// for pnpm 6, we only care about node 14 (our min-support)
+raw = raw.filter((s) => !(s.pnpm === 6 && s.node === 14));
 
 const include = [...raw];
 
