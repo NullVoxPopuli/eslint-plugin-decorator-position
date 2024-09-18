@@ -19,9 +19,8 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-      - uses: ./.github/actions/pnpm
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
 
 #############################################################
 
@@ -30,9 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-      - uses: ./.github/actions/pnpm
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm lint:js
 
   lint_docs:
@@ -40,9 +38,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-      - uses: ./.github/actions/pnpm
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
       - run: pnpm lint:docs
 
   lint_readme:
@@ -50,10 +47,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-      - uses: ./.github/actions/pnpm
-      - run: pnpm update && git diff --exit-code README.md docs/
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - run: pnpm run update && git diff --exit-code README.md docs/
 
 #############################################################
 
@@ -65,33 +61,38 @@ jobs:
       fail-fast: false
       matrix:
         node:
-        - "14"
-        - "16"
-        - "18"
+        # pnpm 9 does not support < Node 18
+        # pnpm 8 does not support < Node 16
+        - { node: "14", pnpm: "6" }
+        # pnpm 9 does not support < Node 18
+        # pnpm 8 does not support < Node 16
+        - { node: "16", pnpm: "7" }
+        # pnpm 9 only supports node >= 18
+        - { node: "18", pnpm: "9" }
         eslint:
         - "eslint@8"
         - "eslint@7"
         - "eslint@6"
     steps:
-    - uses: volta-cli/action@v4
-    - uses: actions/checkout@v3
-    - uses: volta-cli/action@v4
-      with:
-        node-version: ${{ matrix.node }}
-    - uses: ./.github/actions/pnpm
-    - name: "Use ${{ matrix.eslint }}"
-      run: |
-        pnpm remove eslint
-        pnpm add ${{ matrix.eslint }}
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+        with:
+          node-version: ${{ matrix.node.node }}
+          pnpm-version: ${{ matrix.node.pnpm }}
+      - name: "Use ${{ matrix.eslint }}"
+        run: |
+          pnpm remove eslint
+          pnpm add ${{ matrix.eslint }}
 
-    - name: Test with ${{ matrix.node }}
-      run: |
-        echo "Matrix Info"
-        echo "Intended: ${{ matrix.node }}, ${{ matrix.eslint }}"
-        echo "node: $(node -v)"
-        echo "pnpm why eslint"
-        pnpm why eslint
-        pnpm test
+      - name: Test with ${{ matrix.node.node }} & ${{ matrix.node.pnpm }}
+        run: |
+          echo "Matrix Info"
+          echo "Intended: node@${{ matrix.node.node }}, eslint@${{ matrix.eslint }}, pnpm@${{ matrix.node.pnpm }}"
+          echo "node: $(node -v)"
+          echo "pnpm: $(pnpm --version)"
+          echo "pnpm why eslint"
+          pnpm why eslint
+          pnpm test
 
   smoke-tests:
     name: ${{ matrix.script }}
@@ -115,9 +116,8 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v4
-      - uses: ./.github/actions/pnpm
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
       - run: ./scripts/smoke-test.sh smoke-tests/${{ matrix.script }}
 
  # https://github.com/changesets/action
@@ -130,10 +130,10 @@ jobs:
       - tests
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - uses: ./.github/actions/pnpm
+      - uses: wyvox/action-setup-pnpm@v3
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
