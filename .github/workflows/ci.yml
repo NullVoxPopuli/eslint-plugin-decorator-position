@@ -62,9 +62,11 @@ jobs:
       matrix:
         node:
         # pnpm 9 does not support < Node 18
-        - { node: "14", pnpm: "8" }
+        # pnpm 8 does not support < Node 16
+        - { node: "14", pnpm: "6" }
         # pnpm 9 does not support < Node 18
-        - { node: "16", pnpm: "8" }
+        # pnpm 8 does not support < Node 16
+        - { node: "16", pnpm: "7" }
         # pnpm 9 only supports node >= 18
         - { node: "18", pnpm: "9" }
         eslint:
