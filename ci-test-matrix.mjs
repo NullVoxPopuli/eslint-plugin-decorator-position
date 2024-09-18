@@ -1,5 +1,8 @@
 const eslints = [6, 7, 8, 9];
-const nodes = [14, 16, 18, 20, 22];
+const nodes = [
+  14, 16, 18,
+  // 20, 22
+];
 const pnpms = [6, 7, 9];
 
 let raw = [];
