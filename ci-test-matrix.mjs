@@ -31,7 +31,7 @@ raw = raw.filter((s) => !(s.pnpm === 8 && s.node < 16));
 raw = raw.filter((s) => !(s.eslint === 9 && s.node < 18));
 // for pnpm 8, we only care about node 16
 // for pnpm 6, we only care about node 14 (our min-support)
-raw = raw.filter((s) => !(s.pnpm === 6 && s.node === 14));
+raw = raw.filter((s) => !(s.pnpm === 6 && s.node > 14));
 
 const include = [...raw];
 
