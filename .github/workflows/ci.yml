@@ -53,41 +53,45 @@ jobs:
 
 #############################################################
 
-  tests:
-    name: Test
+  tests_setup:
+    name: Tests' Setup
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wyvox/action-setup-pnpm@v3
+      - id: set-matrix
+        run: |
+          matrix_json=$(node ./ci-test-matrix.mjs)
+          echo "matrix=$matrix_json" >> $GITHUB_OUTPUT
+
+  tests:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    needs: ['tests_setup']
     strategy:
       fail-fast: false
-      matrix:
-        node:
-        # pnpm 9 does not support < Node 18
-        # pnpm 8 does not support < Node 16
-        - { node: "14", pnpm: "6" }
-        # pnpm 9 does not support < Node 18
-        # pnpm 8 does not support < Node 16
-        - { node: "16", pnpm: "7" }
-        # pnpm 9 only supports node >= 18
-        - { node: "18", pnpm: "9" }
-        eslint:
-        - "eslint@8"
-        - "eslint@7"
-        - "eslint@6"
+      matrix: ${{fromJson(needs.tests_setup.outputs.matrix)}}
+
     steps:
       - uses: actions/checkout@v4
       - uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: ${{ matrix.node.node }}
-          pnpm-version: ${{ matrix.node.pnpm }}
+          node-version: ${{ matrix.node }}
+          pnpm-version: ${{ matrix.pnpm }}
       - name: "Use ${{ matrix.eslint }}"
         run: |
           pnpm remove eslint
           pnpm add ${{ matrix.eslint }}
+          rm pnpm-lock.yaml
+          pnpm install
 
-      - name: Test with ${{ matrix.node.node }} & ${{ matrix.node.pnpm }}
+      - name: Test with node@${{ matrix.node }} & pnpm@${{ matrix.pnpm }}
         run: |
           echo "Matrix Info"
-          echo "Intended: node@${{ matrix.node.node }}, eslint@${{ matrix.eslint }}, pnpm@${{ matrix.node.pnpm }}"
+          echo "Intended: node@${{ matrix.node }}, eslint@${{ matrix.eslint }}, pnpm@${{ matrix.pnpm }}"
           echo "node: $(node -v)"
           echo "pnpm: $(pnpm --version)"
           echo "pnpm why eslint"
@@ -113,7 +117,7 @@ jobs:
           - issue-reproductions/196
           - issue-reproductions/289
           - issue-reproductions/313
-
+          - issue-reproductions/721
 
     steps:
       - uses: actions/checkout@v4
