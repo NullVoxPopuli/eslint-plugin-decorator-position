@@ -84,7 +84,7 @@ jobs:
       - name: "Use ${{ matrix.eslint }}"
         run: |
           pnpm remove eslint
-          pnpm add ${{ matrix.eslint }}
+          pnpm add ${{ matrix.eslint }} -w
           pnpm install
 
       - name: Test with node@${{ matrix.node }} & pnpm@${{ matrix.pnpm }}
