@@ -392,6 +392,7 @@ function lineLength(userOptions, filePath) {
   }
 
   const eslintPrettierRules = getConfig(filePath)?.rules?.['prettier/prettier'] || [];
+  console.log(eslintPrettierRules, getConfig(filePath));
   const isEnabled = eslintPrettierRules[0] === 'error';
 
   if (!isEnabled) {

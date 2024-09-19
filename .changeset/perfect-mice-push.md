@@ -2,7 +2,7 @@
 'eslint-plugin-decorator-position': major
 ---
 
-Drop support for Node < 18, pnpm < 8, yarn@v1
+Drop support for Node < 18, pnpm < 8, yarn@v1, eslint < 8
 
 
 This doesn't mean that these dropped things won't work, but it means that they aren't tested against.
