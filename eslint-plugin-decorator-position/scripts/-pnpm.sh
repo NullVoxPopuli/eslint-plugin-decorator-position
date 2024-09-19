@@ -18,14 +18,6 @@ function testWithPnpm() {
   echo ""
   echo ""
 
-  echo "Linking to $plugin_path from $target"
-  pnpm link $plugin_path
-  # Install must come after link, due to potential peer violations
-  pnpm install --no-frozen-lockfile
-
-  echo ""
-  echo ""
-
   pnpm list eslint
   pnpm list prettier
   pnpm bin eslint

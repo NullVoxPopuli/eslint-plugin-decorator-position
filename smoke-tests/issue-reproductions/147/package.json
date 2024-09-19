@@ -1,5 +1,5 @@
 {
-  "name": "main-app",
+  "name": "issue-reproductions-147",
   "version": "0.0.0",
   "private": true,
   "repository": "",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "eslint": "^7.9.0",
-    "eslint-plugin-decorator-position": "^2.2.1",
+    "eslint-plugin-decorator-position": "workspace:*",
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0"

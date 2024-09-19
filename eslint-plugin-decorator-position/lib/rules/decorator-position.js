@@ -348,8 +348,17 @@ function placeDecoratorsAboveProperty(context, node, options) {
 // Helpers
 // ///////////////////////////////////
 
+let warned = false;
 function normalizeOptions(userOptions) {
   const options = Object.assign({}, defaultOptions, userOptions);
+
+  if (!warned && options.printWidth > 250) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      `Detected \`printWidth\` of \`${options.printWidth}\` is *very* wide. Consider setting the printWidth to something smaller.`
+    );
+    warned = true;
+  }
 
   options.overrides = {
     [ABOVE]: [],
@@ -383,6 +392,7 @@ function lineLength(userOptions, filePath) {
   }
 
   const eslintPrettierRules = getConfig(filePath)?.rules?.['prettier/prettier'] || [];
+  console.log(eslintPrettierRules, getConfig(filePath));
   const isEnabled = eslintPrettierRules[0] === 'error';
 
   if (!isEnabled) {
