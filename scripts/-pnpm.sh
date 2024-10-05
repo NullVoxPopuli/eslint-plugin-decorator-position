@@ -18,8 +18,11 @@ function testWithPnpm() {
   echo ""
   echo ""
 
+  echo "Preliminary Install"
+  pnpm install -f
   echo "Linking to $plugin_path from $target"
   pnpm link $plugin_path
+  rm pnpm-lock.yaml
   # Install must come after link, due to potential peer violations
   pnpm install --no-frozen-lockfile
 
