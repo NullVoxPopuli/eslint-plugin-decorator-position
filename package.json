@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
-    "./lib/rules/decorator-position": "./lib/rules/decorator-position.js"
+    "./lib/rules/decorator-position": "./lib/rules/decorator-position.js",
+    "./config/*": "./lib/config/*.js"
   },
   "files": [
     "lib",
@@ -83,7 +84,7 @@
   },
   "peerDependencies": {
     "@babel/eslint-parser": "^7.18.2",
-    "eslint": "^6.0.0 || ^7.31.0 || ^8.0.0"
+    "eslint": "^7.31.0 || ^8.0.0 || ^9.0.0"
   },
   "peerDependenciesMeta": {
     "@babel/eslint-parser": {

@@ -39,10 +39,8 @@ function testWithPnpm() {
   echo "PWD: $(pwd)"
   node_modules/.bin/eslint . \
     --no-ignore \
-    --no-eslintrc \
     --config $config_path \
-    --fix \
-    --ext js,ts
+    --fix
 
   git diff --exit-code ./
 }

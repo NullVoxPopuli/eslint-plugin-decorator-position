@@ -18,7 +18,7 @@ function testWithYarn() {
 
   echo "Running tests for $target with yarn"
 
-  config_path=".eslintrc.js"
+  config_path=$(test -f ".eslintrc.js" && echo ".eslintrc.js" || echo "eslint.config.js")
 
   echo ""
   echo ""
@@ -42,10 +42,8 @@ function testWithYarn() {
   echo "$(pwd)"
   node_modules/.bin/eslint . \
     --no-ignore \
-    --no-eslintrc \
     --config $config_path \
-    --fix \
-    --ext js,ts
+    --fix
 
   git diff --exit-code ./
 }
