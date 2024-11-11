@@ -5,22 +5,20 @@
 //------------------------------------------------------------------------------
 
 const { stripIndent } = require('common-tags');
-const { RuleTester, CLIEngine: v7AndEarlier } = require('eslint');
+const { ESLint, RuleTester } = require('eslint');
 
 const rule = require('../../../lib/rules/decorator-position');
 // const { ERROR_MESSAGE } = rule;
 //
 
-const isV7 = Boolean(v7AndEarlier);
-const isV8 = !isV7;
+const eslintMajor = parseInt(ESLint.version.split('.')[0], 10);
 
 // eslint-disable-next-line no-console
 console.debug(`
   =============================
   JS Test Info
   =============================
-  isV7 (or earlier): ${isV7}
-  isV8: ${isV8}
+  ESLint version: ${ESLint.version}
 `);
 
 //------------------------------------------------------------------------------
@@ -28,10 +26,14 @@ console.debug(`
 //------------------------------------------------------------------------------
 
 const using = '@babel/eslint-parser';
-const parser = require.resolve('@babel/eslint-parser');
-const ruleTester = new RuleTester({ parser });
+const parserPath = require.resolve('@babel/eslint-parser');
+const parser = require('@babel/eslint-parser');
 
-const supportsESLintPrettier = Boolean(v7AndEarlier);
+const ruleTester = new RuleTester(
+  eslintMajor >= 9 ? { languageOptions: { parser } } : { parser: parserPath }
+);
+
+const supportsESLintPrettier = eslintMajor <= 7;
 
 describe(`JavaScript (using ${using})`, () => {
   ruleTester.run('decorator-position', rule, {

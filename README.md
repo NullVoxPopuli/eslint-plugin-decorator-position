@@ -15,6 +15,12 @@
 ### 1. Install plugin
 
 ```shell
+pnpm add -D eslint-plugin-decorator-position
+```
+
+Or
+
+```shell
 yarn add --dev eslint-plugin-decorator-position
 ```
 
@@ -24,7 +30,28 @@ Or
 npm install --save-dev eslint-plugin-decorator-position
 ```
 
-### 2. Modify your `.eslintrc.js`
+### 2. Modify your eslint config
+
+For modern 'flat config', append the eslint-plugin-decorator-position config to your `eslint.config.js` file:
+
+```diff
+module.exports = [
++ ...require('eslint-plugin-decorator-position/config/recommended'),
+  {
+    languageOptions: {
+      parser: require('@babel/eslint-parser'),
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+        },
+      },
+    },
+  },
+];
+```
+
+Or for the legacy eslint config format, extend the base config provided by eslint-plugin-decorator-position:
 
 ```javascript
 // .eslintrc.js
@@ -47,6 +74,30 @@ module.exports = {
 Since eslint 8, the printWidth option must be specified to be compatible
 with the eslint-plugin-prettier rule `prettier/prettier`
 
+```diff
+// eslint.config.js
+module.exports = [
+  ...require('eslint-plugin-decorator-position/config/recommended'),
+  {
+    languageOptions: {
+      parser: require('@babel/eslint-parser'),
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          plugins: [['@babel/plugin-proposal-decorators', { legacy: true }]],
+        },
+      },
+    },
+  },
++ rules: {
++   'decorator-position/decorator-position': ['error', { printWidth: 100 }],
++   'prettier/prettier': ['error', { printWidth: 100 }]
++ }
+]
+```
+
+or
+
 ```javascript
 // .eslintrc.js
 module.exports = {
@@ -66,10 +117,35 @@ If there is a `.prettierrc.js` file, that will be read instead, and `printwidth`
 
 ## 🧰 Configurations
 
+'Flat' configurations:
 |    | Name | Description |
 |:---|:-----|:------------|
-| | [base](./lib/config/base.js) | contains no rules settings, but the basic eslint configuration suitable for any project. You can use it to configure rules as you wish. |
-| :hamster: | [ember](./lib/config/ember.js) | extends the `base` configuration by enabling the recommended rules for ember projects. |
+| | [`/config/base`](./lib/config/base.js) | Only installs the plugin. You can use it to configure rules as you wish. |
+| | [`/config/rules`](./lib/config/rules.js) | Only configures the rules. Expects the plugin to be installed. |
+| | [`/config/recommended`](./lib/config/recommended.js) | Installs the plugin and configures the rules |
+
+Legacy configurations:
+|    | Name | Description |
+|:---|:-----|:------------|
+| | [base](./lib/config-legacy/base.js) | contains no rules settings, but the basic eslint configuration suitable for any project. You can use it to configure rules as you wish. |
+| :hamster: | [ember](./lib/config-legacy/ember.js) | extends the `base` configuration by enabling the recommended rules for ember projects. |
+
+## Manual plugin installation
+
+If you prefer to manage the config yourself, the plugin can be installed like this:
+
+```diff
+// eslint.config.js
+module.exports = [
+  // ... your existing config
+  plugins: {
++   "decorator-position": require("eslint-plugin-decorator-position"),
+  },
+  rules: {
++   'decorator-position/decorator-position': 'error',
+  }
+]
+```
 
 ## 🍟 Rules
 

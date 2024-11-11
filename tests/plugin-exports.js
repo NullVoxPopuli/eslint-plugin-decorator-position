@@ -3,8 +3,8 @@
 'use strict';
 
 const plugin = require('../lib');
-const base = require('../lib/config/base');
-const ember = require('../lib/config/ember');
+const base = require('../lib/config-legacy/base');
+const ember = require('../lib/config-legacy/ember');
 
 describe('plugin exports', () => {
   describe('configs', () => {

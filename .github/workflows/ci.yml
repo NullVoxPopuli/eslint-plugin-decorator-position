@@ -69,10 +69,18 @@ jobs:
         - { node: "16", pnpm: "7" }
         # pnpm 9 only supports node >= 18
         - { node: "18", pnpm: "9" }
+        - { node: "20", pnpm: "9" }
+        - { node: "22", pnpm: "9" }
         eslint:
+        - "eslint@9"
         - "eslint@8"
         - "eslint@7"
-        - "eslint@6"
+        exclude:
+        - eslint: "eslint@9"
+          node: { node: "14", pnpm: "6" }
+        - eslint: "eslint@9"
+          node: { node: "16", pnpm: "7" }
+            
     steps:
       - uses: actions/checkout@v4
       - uses: wyvox/action-setup-pnpm@v3
@@ -104,6 +112,7 @@ jobs:
         # tese are all relative to the smoke-tests directory
         script:
           - integration/position-default
+          - integration/flat-config
           - integration/position-prettier
           - integration/external-config-prettier
           - examples/ember

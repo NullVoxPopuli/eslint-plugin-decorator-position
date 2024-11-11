@@ -4,32 +4,31 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const tsParser = require.resolve('@typescript-eslint/parser');
-const { CLIEngine: v7AndEarlier } = require('eslint');
+const tsParserPath = require.resolve('@typescript-eslint/parser');
+const tsParser = require('@typescript-eslint/parser');
+const { ESLint, RuleTester } = require('eslint');
 
 const { stripIndent } = require('common-tags');
-const RuleTester = require('eslint').RuleTester;
 
 const rule = require('../../../lib/rules/decorator-position');
-// const { ERROR_MESSAGE } = rule;
-
-const isV7 = Boolean(v7AndEarlier);
-const isV8 = !isV7;
 
 // eslint-disable-next-line no-console
 console.debug(`
   =============================
   JS Test Info
   =============================
-  isV7 (or earlier): ${isV7}
-  isV8: ${isV8}
+  ESLint version: ${ESLint.version}
 `);
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-const tsRuleTester = new RuleTester({ parser: tsParser });
+const eslintMajor = parseInt(ESLint.version.split('.')[0], 10);
+
+const tsRuleTester = new RuleTester(
+  eslintMajor >= 9 ? { languageOptions: { parser: tsParser } } : { parser: tsParserPath }
+);
 
 describe('TypeScript (using @typescript-eslint/parser)', () => {
   tsRuleTester.run('decorator-position', rule, {
