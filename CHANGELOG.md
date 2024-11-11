@@ -1,5 +1,11 @@
 # eslint-plugin-decorator-position
 
+## 6.0.0
+
+### Major Changes
+
+- [#732](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/732) [`101261b1e18253236bf51ac0f5c1fc6c4ad1c90c`](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/101261b1e18253236bf51ac0f5c1fc6c4ad1c90c) Thanks [@davidtaylorhq](https://github.com/davidtaylorhq)! - Adds support for ESLint 9 with flat configs, and drops ESLint 6 compatibility.
+
 ## [5.0.1](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/compare/v5.0.0...v5.0.1) (2022-07-19)
 
 ## 5.0.2
