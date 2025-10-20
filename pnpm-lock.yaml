@@ -32,7 +32,7 @@ importers:
         version: 0.4.8(encoding@0.1.13)
       '@changesets/cli':
         specifier: ^2.25.2
-        version: 2.29.7(@types/node@24.7.2)
+        version: 2.29.7(@types/node@24.8.1)
       '@eslint/eslintrc':
         specifier: 2.1.0
         version: 2.1.0
@@ -562,8 +562,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@24.7.2':
-    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
+  '@types/node@24.8.1':
+    resolution: {integrity: sha512-alv65KGRadQVfVcG69MuB4IzdYVpRwMG/mq8KWOaoOdyY617P5ivaDiMCGOFDWD2sAn5Q0mR3mRtUOgm99hL9Q==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -732,8 +732,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  baseline-browser-mapping@2.8.16:
-    resolution: {integrity: sha512-OMu3BGQ4E7P1ErFsIPpbJh0qvDudM/UuJeHgkAvfWe+0HFJCXh+t/l8L6fVLR55RI/UbKrVLnAXZSVwd9ysWYw==}
+  baseline-browser-mapping@2.8.18:
+    resolution: {integrity: sha512-UYmTpOBwgPScZpS4A+YbapwWuBwasxvO/2IOHArSsAhL/+ZdmATBXTex3t+l2hXwLVYK382ibr/nKoY9GKe86w==}
     hasBin: true
 
   better-path-resolve@1.0.0:
@@ -792,8 +792,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001750:
-    resolution: {integrity: sha512-cuom0g5sdX6rw00qOoLNSFCJ9/mYIsuSOA+yzpDw8eopiFqcVwQvZHqov0vmEighRxX++cfC0Vg1G+1Iy/mSpQ==}
+  caniuse-lite@1.0.30001751:
+    resolution: {integrity: sha512-A0QJhug0Ly64Ii3eIqHu5X51ebln3k4yTUkY1j8drqpWHVreg/VLijN48cZ1bYPiqOQuqpkIKnzr/Ul8V+p6Cw==}
 
   chai@4.5.0:
     resolution: {integrity: sha512-RITGBfijLkBddZvnn8jdqoTypxvqbOLYQkGGxXzeFjVHvudaPw0HNFD9x928/eUwYWd2dPCugVqspGALTZZQKw==}
@@ -973,8 +973,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.234:
-    resolution: {integrity: sha512-RXfEp2x+VRYn8jbKfQlRImzoJU01kyDvVPBmG39eU2iuRVhuS6vQNocB8J0/8GrIMLnPzgz4eW6WiRnJkTuNWg==}
+  electron-to-chromium@1.5.237:
+    resolution: {integrity: sha512-icUt1NvfhGLar5lSWH3tHNzablaA5js3HVHacQimfP8ViEBOQv+L7DKEuHdbTZ0SKCO1ogTJTIL1Gwk9S6Qvcg==}
 
   ember-rfc176-data@0.3.18:
     resolution: {integrity: sha512-JtuLoYGSjay1W3MQAxt3eINWXNYYQliK90tLwtb8aeCuQK8zKGCRbBodVIrkcTqshULMnRuTOS6t1P7oQk3g6Q==}
@@ -1924,8 +1924,8 @@ packages:
       encoding:
         optional: true
 
-  node-releases@2.0.23:
-    resolution: {integrity: sha512-cCmFDMSm26S6tQSDpBCg/NR8NENrVPhAJSf+XbxBG4rPFaaonlEoE9wHQmun+cls499TQGSb7ZyPBRlzgKfpeg==}
+  node-releases@2.0.25:
+    resolution: {integrity: sha512-4auku8B/vw5psvTiiN9j1dAOsXvMoGqJuKJcR+dTdqiXEK20mMTk1UEo3HS16LeGQsVG6+qKTPM9u/qQ2LqATA==}
 
   normalize-package-data@2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
@@ -2357,8 +2357,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  std-env@3.9.0:
-    resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
+  std-env@3.10.0:
+    resolution: {integrity: sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==}
 
   stop-iteration-iterator@1.1.0:
     resolution: {integrity: sha512-eLoXW/DHyl62zxY4SCaIgnRhuMr6ri4juEYARS8E6sCEqzKpOiE521Ucofdx+KnDZl5xmvGYaaKCk5FEOxJCoQ==}
@@ -2930,7 +2930,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@changesets/cli@2.29.7(@types/node@24.7.2)':
+  '@changesets/cli@2.29.7(@types/node@24.8.1)':
     dependencies:
       '@changesets/apply-release-plan': 7.0.13
       '@changesets/assemble-release-plan': 6.0.9
@@ -2946,7 +2946,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.2(@types/node@24.7.2)
+      '@inquirer/external-editor': 1.0.2(@types/node@24.8.1)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -3173,12 +3173,12 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@inquirer/external-editor@1.0.2(@types/node@24.7.2)':
+  '@inquirer/external-editor@1.0.2(@types/node@24.8.1)':
     dependencies:
       chardet: 2.1.0
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 24.7.2
+      '@types/node': 24.8.1
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -3277,7 +3277,7 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@24.7.2':
+  '@types/node@24.8.1':
     dependencies:
       undici-types: 7.14.0
 
@@ -3329,7 +3329,7 @@ snapshots:
       c8: 7.14.0
       magic-string: 0.30.19
       picocolors: 1.1.1
-      std-env: 3.9.0
+      std-env: 3.10.0
       vitest: 0.31.1(@vitest/ui@0.31.1)
 
   '@vitest/expect@0.31.1':
@@ -3482,7 +3482,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  baseline-browser-mapping@2.8.16: {}
+  baseline-browser-mapping@2.8.18: {}
 
   better-path-resolve@1.0.0:
     dependencies:
@@ -3505,10 +3505,10 @@ snapshots:
 
   browserslist@4.26.3:
     dependencies:
-      baseline-browser-mapping: 2.8.16
-      caniuse-lite: 1.0.30001750
-      electron-to-chromium: 1.5.234
-      node-releases: 2.0.23
+      baseline-browser-mapping: 2.8.18
+      caniuse-lite: 1.0.30001751
+      electron-to-chromium: 1.5.237
+      node-releases: 2.0.25
       update-browserslist-db: 1.1.3(browserslist@4.26.3)
 
   c8@7.14.0:
@@ -3585,7 +3585,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001750: {}
+  caniuse-lite@1.0.30001751: {}
 
   chai@4.5.0:
     dependencies:
@@ -3775,7 +3775,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.234: {}
+  electron-to-chromium@1.5.237: {}
 
   ember-rfc176-data@0.3.18: {}
 
@@ -4852,7 +4852,7 @@ snapshots:
     optionalDependencies:
       encoding: 0.1.13
 
-  node-releases@2.0.23: {}
+  node-releases@2.0.25: {}
 
   normalize-package-data@2.5.0:
     dependencies:
@@ -5296,7 +5296,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  std-env@3.9.0: {}
+  std-env@3.10.0: {}
 
   stop-iteration-iterator@1.1.0:
     dependencies:
@@ -5523,14 +5523,14 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-node@0.31.1(@types/node@24.7.2):
+  vite-node@0.31.1(@types/node@24.8.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       mlly: 1.8.0
       pathe: 1.1.2
       picocolors: 1.1.1
-      vite: 4.5.14(@types/node@24.7.2)
+      vite: 4.5.14(@types/node@24.8.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5541,20 +5541,20 @@ snapshots:
       - supports-color
       - terser
 
-  vite@4.5.14(@types/node@24.7.2):
+  vite@4.5.14(@types/node@24.8.1):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.5.6
       rollup: 3.29.5
     optionalDependencies:
-      '@types/node': 24.7.2
+      '@types/node': 24.8.1
       fsevents: 2.3.3
 
   vitest@0.31.1(@vitest/ui@0.31.1):
     dependencies:
       '@types/chai': 4.3.20
       '@types/chai-subset': 1.3.6(@types/chai@4.3.20)
-      '@types/node': 24.7.2
+      '@types/node': 24.8.1
       '@vitest/expect': 0.31.1
       '@vitest/runner': 0.31.1
       '@vitest/snapshot': 0.31.1
@@ -5570,12 +5570,12 @@ snapshots:
       magic-string: 0.30.19
       pathe: 1.1.2
       picocolors: 1.1.1
-      std-env: 3.9.0
+      std-env: 3.10.0
       strip-literal: 1.3.0
       tinybench: 2.9.0
       tinypool: 0.5.0
-      vite: 4.5.14(@types/node@24.7.2)
-      vite-node: 0.31.1(@types/node@24.7.2)
+      vite: 4.5.14(@types/node@24.8.1)
+      vite-node: 0.31.1(@types/node@24.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@vitest/ui': 0.31.1(vitest@0.31.1)
