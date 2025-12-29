@@ -4,12 +4,22 @@
   "description": "ESLint plugin for enforcing decorator position",
   "main": "lib/index.js",
   "exports": {
-    ".": "./lib/index.js",
-    "./lib/rules/decorator-position": "./lib/rules/decorator-position.js",
-    "./config/*": "./lib/config/*.js"
+    ".": {
+      "default": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./lib/rules/decorator-position": {
+      "default": "./lib/rules/decorator-position.js",
+      "types": "./types/rules/decorator-position.d.ts"
+    },
+    "./config/*": {
+      "default": "./lib/config/*.js",
+      "types": "./types/config/*.d.ts"
+    }
   },
   "files": [
     "lib",
+    "types",
     "babel.config.cjs"
   ],
   "directories": {
@@ -24,6 +34,8 @@
     "lint:js": "eslint . --cache",
     "test": "vitest --coverage",
     "test:eslint7": "pnpm remove eslint; pnpm add eslint@7; pnpm test",
+    "tsc": "tsc",
+    "prepack": "npm run tsc",
     "update": "node ./scripts/update-rules.js"
   },
   "repository": {
@@ -54,7 +66,11 @@
     "@changesets/changelog-github": "^0.4.7",
     "@changesets/cli": "^2.25.2",
     "@eslint/eslintrc": "2.1.0",
+    "@types/eslint": "9.6.1",
+    "@types/node": "24.10.1",
+    "@types/prettier": "2.7.3",
     "@typescript-eslint/parser": "5.62.0",
+    "@typescript-eslint/utils": "8.51.0",
     "@vitest/coverage-c8": "^0.31.0",
     "@vitest/ui": "0.31.1",
     "c8": "8.0.0",
@@ -72,7 +88,7 @@
     "markdownlint-cli": "0.35.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
-    "typescript": "5.1.6",
+    "typescript": "5.9.3",
     "vitest": "0.31.1"
   },
   "dependencies": {
