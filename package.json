@@ -34,8 +34,7 @@
     "lint:js": "eslint . --cache",
     "test": "vitest --coverage",
     "test:eslint7": "pnpm remove eslint; pnpm add eslint@7; pnpm test",
-    "tsc": "tsc",
-    "prepack": "npm run tsc",
+    "prepack": "pnpm tsc",
     "update": "node ./scripts/update-rules.js"
   },
   "repository": {
