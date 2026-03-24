@@ -25,9 +25,15 @@ console.debug(`
 // Tests
 //------------------------------------------------------------------------------
 
-const using = '@babel/eslint-parser';
-const parserPath = require.resolve('@babel/eslint-parser');
-const parser = require('@babel/eslint-parser');
+// @babel/eslint-parser v7 does not support ESLint 10+; fall back to @typescript-eslint/parser
+const useBabelParser = eslintMajor < 10;
+const using = useBabelParser ? '@babel/eslint-parser' : '@typescript-eslint/parser';
+const parserPath = useBabelParser
+  ? require.resolve('@babel/eslint-parser')
+  : require.resolve('@typescript-eslint/parser');
+const parser = useBabelParser
+  ? require('@babel/eslint-parser')
+  : require('@typescript-eslint/parser');
 
 const ruleTester = new RuleTester(
   eslintMajor >= 9 ? { languageOptions: { parser } } : { parser: parserPath }

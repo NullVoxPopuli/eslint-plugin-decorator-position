@@ -72,10 +72,17 @@ jobs:
         - { node: "20", pnpm: "9" }
         - { node: "22", pnpm: "9" }
         eslint:
+        - "eslint@10"
         - "eslint@9"
         - "eslint@8"
         - "eslint@7"
         exclude:
+        - eslint: "eslint@10"
+          node: { node: "14", pnpm: "6" }
+        - eslint: "eslint@10"
+          node: { node: "16", pnpm: "7" }
+        - eslint: "eslint@10"
+          node: { node: "18", pnpm: "9" }
         - eslint: "eslint@9"
           node: { node: "14", pnpm: "6" }
         - eslint: "eslint@9"
@@ -91,6 +98,10 @@ jobs:
         run: |
           pnpm remove eslint
           pnpm add ${{ matrix.eslint }}
+
+      - name: "Update parsers for ESLint 10"
+        if: matrix.eslint == 'eslint@10'
+        run: pnpm add @typescript-eslint/parser@8
 
       - name: Test with ${{ matrix.node.node }} & ${{ matrix.node.pnpm }}
         run: |
