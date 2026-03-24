@@ -6,7 +6,9 @@
   "private": true,
   "packageManager": "yarn@1.22.22",
   "dependencies": {
-    "babel-eslint": "^10.0.3",
+    "@babel/core": "^7.0.0",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
     "eslint-plugin-decorator-position": "*",
     "eslint": "^9.0.0"
   }
