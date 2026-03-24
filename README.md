@@ -7,7 +7,7 @@
 
 ## ❗️Requirements
 
-- [ESLint](https://eslint.org/) `>= 7`
+- [ESLint](https://eslint.org/) `>= 6`
 - [Node.js](https://nodejs.org/) `>= 12`
 
 ## 🚀 Usage
