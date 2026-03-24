@@ -9,6 +9,7 @@ function testWithYarn() {
 
   set +e
   echo "We have to install deps in the plugin with yarn because yarn is bad at dependency resolution"
+  rm -rf node_modules
   quietYarn
   quietYarn unlink
   set -e
