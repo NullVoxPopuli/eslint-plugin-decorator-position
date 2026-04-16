@@ -1,0 +1,22 @@
+{
+  "solution": {
+    "eslint-plugin-decorator-position": {
+      "impact": "minor",
+      "oldVersion": "6.0.0",
+      "newVersion": "6.1.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2026-04-16)\n\n* eslint-plugin-decorator-position 6.1.0 (minor)\n\n#### :rocket: Enhancement\n* `eslint-plugin-decorator-position`\n  * [#788](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/788) Add ESLint 10 support ([@Copilot](https://github.com/apps/copilot-swe-agent))\n  * [#779](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/779) Provide bundled TypeScript typings ([@dartess](https://github.com/dartess))\n\n#### :house: Internal\n* `eslint-plugin-decorator-position`\n  * [#793](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/793) Release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 3\n- Copilot [Bot] ([@copilot-swe-agent](https://github.com/apps/copilot-swe-agent))\n- Sergey Kozlov ([@dartess](https://github.com/dartess))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+}

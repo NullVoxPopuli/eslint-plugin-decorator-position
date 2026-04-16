@@ -1,5 +1,23 @@
 # Changelog
 
+## Release (2026-04-16)
+
+* eslint-plugin-decorator-position 6.1.0 (minor)
+
+#### :rocket: Enhancement
+* `eslint-plugin-decorator-position`
+  * [#788](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/788) Add ESLint 10 support ([@Copilot](https://github.com/apps/copilot-swe-agent))
+  * [#779](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/779) Provide bundled TypeScript typings ([@dartess](https://github.com/dartess))
+
+#### :house: Internal
+* `eslint-plugin-decorator-position`
+  * [#793](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/793) Release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 3
+- Copilot [Bot] ([@copilot-swe-agent](https://github.com/apps/copilot-swe-agent))
+- Sergey Kozlov ([@dartess](https://github.com/dartess))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 # eslint-plugin-decorator-position
 
 ## 6.0.0
