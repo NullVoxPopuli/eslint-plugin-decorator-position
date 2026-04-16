@@ -17,6 +17,7 @@ npm-debug.log
 .vscode
 .idea
 *.tgz
+package-lock.json
 
 # Build artifacts
 types
