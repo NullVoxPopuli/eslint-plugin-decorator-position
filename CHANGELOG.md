@@ -1,3 +1,5 @@
+# Changelog
+
 # eslint-plugin-decorator-position
 
 ## 6.0.0

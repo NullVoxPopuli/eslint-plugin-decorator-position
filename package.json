@@ -2,45 +2,6 @@
   "name": "eslint-plugin-decorator-position",
   "version": "6.0.0",
   "description": "ESLint plugin for enforcing decorator position",
-  "main": "lib/index.js",
-  "exports": {
-    ".": {
-      "default": "./lib/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./lib/rules/decorator-position": {
-      "default": "./lib/rules/decorator-position.js",
-      "types": "./types/rules/decorator-position.d.ts"
-    },
-    "./config/*": {
-      "default": "./lib/config/*.js",
-      "types": "./types/config/*.d.ts"
-    }
-  },
-  "files": [
-    "lib",
-    "types",
-    "babel.config.cjs"
-  ],
-  "directories": {
-    "rules": "rules",
-    "test": "test"
-  },
-  "scripts": {
-    "release": "changeset publish",
-    "lint": "npm-run-all lint:* --continue-on-error",
-    "lint:docs": "markdownlint **/*.md",
-    "lint:docs-js": "eslint . --cache --ext md",
-    "lint:js": "eslint . --cache",
-    "test": "vitest --coverage",
-    "test:eslint7": "pnpm remove eslint; pnpm add eslint@7; pnpm test",
-    "prepack": "pnpm tsc",
-    "update": "node ./scripts/update-rules.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position.git"
-  },
   "keywords": [
     "eslint",
     "ember",
@@ -50,20 +11,60 @@
     "rules",
     "decorators"
   ],
-  "engines": {
-    "node": ">=14"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position#readme",
   "bugs": {
     "url": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/issues"
   },
-  "homepage": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NullVoxPopuli/eslint-plugin-decorator-position.git"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./lib/rules/decorator-position": {
+      "types": "./types/rules/decorator-position.d.ts",
+      "default": "./lib/rules/decorator-position.js"
+    },
+    "./config/*": {
+      "types": "./types/config/*.d.ts",
+      "default": "./lib/config/*.js"
+    }
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test",
+    "rules": "rules"
+  },
+  "files": [
+    "lib",
+    "types",
+    "babel.config.cjs"
+  ],
+  "scripts": {
+    "lint": "npm-run-all lint:* --continue-on-error",
+    "lint:docs": "markdownlint **/*.md",
+    "lint:docs-js": "eslint . --cache --ext md",
+    "lint:js": "eslint . --cache",
+    "prepack": "pnpm tsc",
+    "test": "vitest --coverage",
+    "test:eslint7": "pnpm remove eslint; pnpm add eslint@7; pnpm test",
+    "update": "node ./scripts/update-rules.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.6",
+    "@ember-data/rfc395-data": "^0.0.4",
+    "ember-rfc176-data": "^0.3.17",
+    "snake-case": "^3.0.4"
+  },
   "devDependencies": {
     "@babel/core": "7.22.8",
     "@babel/eslint-parser": "7.22.7",
     "@babel/plugin-proposal-decorators": "7.22.7",
-    "@changesets/changelog-github": "^0.4.7",
-    "@changesets/cli": "^2.25.2",
     "@eslint/eslintrc": "2.1.0",
     "@types/eslint": "9.6.1",
     "@types/node": "24.10.1",
@@ -87,15 +88,9 @@
     "markdownlint-cli": "0.35.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
+    "release-plan": "^0.18.0",
     "typescript": "5.9.3",
     "vitest": "0.31.1"
-  },
-  "dependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/plugin-proposal-decorators": "^7.18.6",
-    "@ember-data/rfc395-data": "^0.0.4",
-    "ember-rfc176-data": "^0.3.17",
-    "snake-case": "^3.0.4"
   },
   "peerDependencies": {
     "@babel/eslint-parser": "^7.18.2",
@@ -106,6 +101,13 @@
       "optional": true
     }
   },
+  "engines": {
+    "node": ">=14"
+  },
+  "volta": {
+    "node": "24.14.1",
+    "pnpm": "9.15.9"
+  },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
     "labels": {
@@ -115,9 +117,5 @@
       "documentation": ":memo: Documentation",
       "internal": ":house: Internal"
     }
-  },
-  "volta": {
-    "node": "24.14.1",
-    "pnpm": "9.15.9"
   }
 }
