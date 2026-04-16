@@ -1,5 +1,11 @@
 # eslint-plugin-decorator-position
 
+## 6.1.0
+
+### Minor Changes
+
+- [#788](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/788) [`a39bae628899553b44ec7b9f380d1ec6d3709530`](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/commit/a39bae628899553b44ec7b9f380d1ec6d3709530) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Add ESLint 10 support
+
 ## 6.0.0
 
 ### Major Changes
