@@ -106,7 +106,7 @@
   },
   "volta": {
     "node": "24.14.1",
-    "pnpm": "9.15.9"
+    "pnpm": "10.33.2"
   },
   "changelog": {
     "repo": "NullVoxPopuli/eslint-plugin-decorator-position",
