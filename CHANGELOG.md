@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2026-04-16)
 
 * eslint-plugin-decorator-position 6.1.0 (minor)
