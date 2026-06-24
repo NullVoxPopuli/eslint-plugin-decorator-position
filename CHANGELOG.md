@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-06-24)
+
+* eslint-plugin-decorator-position 6.1.1 (patch)
+
+#### :bug: Bug Fix
+* `eslint-plugin-decorator-position`
+  * [#802](https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/pull/802) Widen `@babel/eslint-parser` peerdep ([@davidtaylorhq](https://github.com/davidtaylorhq))
+
+#### Committers: 1
+- David Taylor ([@davidtaylorhq](https://github.com/davidtaylorhq))
+
 ## Release (2026-04-16)
 
 * eslint-plugin-decorator-position 6.1.0 (minor)
