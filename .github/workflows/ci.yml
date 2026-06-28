@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
 
 #############################################################
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm lint:js
 
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm lint:docs
 
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['install_dependencies']
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
       - run: pnpm run update && git diff --exit-code README.md docs/
 
@@ -89,7 +89,7 @@ jobs:
           node: { node: "16", pnpm: "7" }
             
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
         with:
           node-version: ${{ matrix.node.node }}
@@ -136,7 +136,7 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: wyvox/action-setup-pnpm@v4
       - run: ./scripts/smoke-test.sh smoke-tests/${{ matrix.script }}
 
@@ -150,7 +150,7 @@ jobs:
       - tests
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
       - uses: wyvox/action-setup-pnpm@v4
