@@ -90,7 +90,7 @@
     "prettier": "2.8.8",
     "release-plan": "^0.18.0",
     "typescript": "5.9.3",
-    "vitest": "0.31.1"
+    "vitest": "3.2.6"
   },
   "peerDependencies": {
     "@babel/eslint-parser": "^7.18.2 || ^8.0.0",
